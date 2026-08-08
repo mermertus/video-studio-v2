@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "template",
+  "fps": 30,
+  "hook": {
+    "text": "",
+    "spoken": true,
+    "startSec": 0,
+    "endSec": 0,
+    "visual": {
+      "type": "sticker",
+      "realSticker": true,
+      "selector": "",
+      "asset": "",
+      "motion": "finite-gif-like",
+      "sfx": ""
+    }
+  },
+  "explicitRequirements": [],
+  "enumeration": [],
+  "phases": []
+}

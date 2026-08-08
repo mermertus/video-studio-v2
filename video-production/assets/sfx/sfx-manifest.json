@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "samples": {
+    "boom": {
+      "file": "boom.wav",
+      "duration": 1.2,
+      "transient_offset": 0.763,
+      "category": "drop",
+      "default_volume": 0.2,
+      "use_for": [
+        "boom",
+        "deep-hit"
+      ],
+      "license": "ElevenLabs generated",
+      "source": "generated"
+    },
+    "camera-shutter": {
+      "file": "camera-shutter.wav",
+      "duration": 1.811,
+      "transient_offset": 0.028,
+      "category": "ui",
+      "default_volume": 0.2,
+      "use_for": [
+        "shutter",
+        "snapshot",
+        "screenshot"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "chalk-writing": {
+      "file": "chalk-writing.wav",
+      "duration": 4.226,
+      "transient_offset": 0.049,
+      "category": "ui",
+      "default_volume": 0.2,
+      "use_for": [
+        "writing",
+        "annotation",
+        "sketch"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "chime": {
+      "file": "chime.wav",
+      "duration": 1.2,
+      "transient_offset": 1.2,
+      "category": "reveal",
+      "default_volume": 0.2,
+      "use_for": [
+        "logo-reveal",
+        "chime"
+      ],
+      "license": "ElevenLabs generated",
+      "source": "generated"
+    },
+    "cinematic-low-whoosh": {
+      "file": "cinematic-low-whoosh.wav",
+      "duration": 7.964,
+      "transient_offset": 0.033,
+      "category": "transition",
+      "default_volume": 0.2,
+      "use_for": [
+        "act-break",
+        "deep-whoosh",
+        "scene-enter"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "cinematic-riser-impact": {
+      "file": "cinematic-riser-impact.wav",
+      "duration": 10.797,
+      "transient_offset": 0.038,
+      "category": "riser",
+      "default_volume": 0.2,
+      "use_for": [
+        "act-break-buildup",
+        "riser-to-hit"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "click": {
+      "file": "click.wav",
+      "duration": 0.8,
+      "transient_offset": 0.134,
+      "category": "ui",
+      "default_volume": 0.2,
+      "use_for": [
+        "click",
+        "faux-cursor"
+      ],
+      "license": "ElevenLabs generated",
+      "source": "generated"
+    },
+    "ding": {
+      "file": "ding.wav",
+      "duration": 1,
+      "transient_offset": 0.409,
+      "category": "reveal",
+      "default_volume": 0.2,
+      "use_for": [
+        "word-reveal",
+        "ding"
+      ],
+      "license": "ElevenLabs generated",
+      "source": "generated"
+    },
+    "impact-hard": {
+      "file": "impact-hard.wav",
+      "duration": 1,
+      "transient_offset": 1,
+      "category": "impact",
+      "default_volume": 0.2,
+      "use_for": [
+        "hero-number",
+        "hard-impact"
+      ],
+      "license": "ElevenLabs generated",
+      "source": "generated"
+    },
+    "impact-soft": {
+      "file": "impact-soft.wav",
+      "duration": 1,
+      "transient_offset": 0.994,
+      "category": "impact",
+      "default_volume": 0.2,
+      "use_for": [
+        "card-land",
+        "object-land"
+      ],
+      "license": "ElevenLabs generated",
+      "source": "generated"
+    },
+    "pop": {
+      "file": "pop.wav",
+      "duration": 0.48,
+      "transient_offset": 0.48,
+      "category": "reveal",
+      "default_volume": 0.2,
+      "use_for": [
+        "pop",
+        "chip-reveal"
+      ],
+      "license": "ElevenLabs generated",
+      "source": "generated"
+    },
+    "riser": {
+      "file": "riser.wav",
+      "duration": 1.718,
+      "transient_offset": 0.048,
+      "category": "riser",
+      "default_volume": 0.2,
+      "use_for": [
+        "act-break-buildup"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "riser-long": {
+      "file": "riser-long.wav",
+      "duration": 6.385,
+      "transient_offset": 0.267,
+      "category": "riser",
+      "default_volume": 0.2,
+      "use_for": [
+        "long-buildup"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "sd-card-insert": {
+      "file": "sd-card-insert.wav",
+      "duration": 0.395,
+      "transient_offset": 0.02,
+      "category": "reveal",
+      "default_volume": 0.2,
+      "use_for": [
+        "card-reveal",
+        "animated-text"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "shutter-release": {
+      "file": "shutter-release.wav",
+      "duration": 0.58,
+      "transient_offset": 0.037,
+      "category": "ui",
+      "default_volume": 0.2,
+      "use_for": [
+        "screenshot",
+        "picture-reveal"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "sub-drop": {
+      "file": "sub-drop.wav",
+      "duration": 1.48,
+      "transient_offset": 0,
+      "category": "drop",
+      "default_volume": 0.2,
+      "use_for": [
+        "dramatic-drop",
+        "silence"
+      ],
+      "license": "ElevenLabs generated",
+      "source": "generated"
+    },
+    "subtle-warning": {
+      "file": "subtle-warning.wav",
+      "duration": 1.045,
+      "transient_offset": 0.096,
+      "category": "ui",
+      "default_volume": 0.2,
+      "use_for": [
+        "warning",
+        "alert",
+        "caution"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "swipe": {
+      "file": "swipe.wav",
+      "duration": 0.255,
+      "transient_offset": 0.123,
+      "category": "transition",
+      "default_volume": 0.2,
+      "use_for": [
+        "swipe",
+        "pan"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "swoosh": {
+      "file": "swoosh.wav",
+      "duration": 0.859,
+      "transient_offset": 0.043,
+      "category": "transition",
+      "default_volume": 0.2,
+      "use_for": [
+        "whip",
+        "scene-swoosh",
+        "pan"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "telop": {
+      "file": "telop.wav",
+      "duration": 0.163,
+      "transient_offset": 0.163,
+      "category": "reveal",
+      "default_volume": 0.2,
+      "use_for": [
+        "icon-reveal",
+        "item-reveal",
+        "telop"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "thud": {
+      "file": "thud.wav",
+      "duration": 0.8,
+      "transient_offset": 0.282,
+      "category": "impact",
+      "default_volume": 0.2,
+      "use_for": [
+        "thud",
+        "object-drop"
+      ],
+      "license": "ElevenLabs generated",
+      "source": "generated"
+    },
+    "title-swoosh": {
+      "file": "title-swoosh.wav",
+      "duration": 1.393,
+      "transient_offset": 1.393,
+      "category": "transition",
+      "default_volume": 0.2,
+      "use_for": [
+        "title-reveal",
+        "headline-swoosh"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "typing-keyboard": {
+      "file": "typing-keyboard.wav",
+      "duration": 3.39,
+      "transient_offset": 0.05,
+      "category": "ui",
+      "default_volume": 0.2,
+      "use_for": [
+        "typing",
+        "code-stream",
+        "terminal"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "whoosh-impact": {
+      "file": "whoosh-impact.wav",
+      "duration": 2.995,
+      "transient_offset": 0.158,
+      "category": "impact",
+      "default_volume": 0.2,
+      "use_for": [
+        "whip-to-impact",
+        "scene-land"
+      ],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "whoosh-tuck": {
+      "file": "whoosh-tuck.wav",
+      "duration": 0.55,
+      "transient_offset": 0.03,
+      "category": "transition",
+      "default_volume": 0.2,
+      "use_for": [
+        "pip-llamada",
+        "whatsapp-call-window",
+        "minimize-to-corner"
+      ],
+      "license": "Codex generated for Maria Bejarano",
+      "source": "generated"
+    }
+  }
+}
+

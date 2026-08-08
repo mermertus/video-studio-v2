@@ -1,0 +1,8 @@
+{
+  "id": "localized-scrim",
+  "version": "1.0.0",
+  "kind": "readability-primitive",
+  "integration": "inline",
+  "entry": "snippet.fragment.html",
+  "immutable": true
+}

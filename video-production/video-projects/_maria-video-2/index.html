@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Maria Bejarano - Video 2</title>
+  <link rel="stylesheet" href="assets/maria-tokens.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: #000; overflow: hidden; }
+    body { font-family: var(--font-body); color: var(--fg); }
+
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      background: #000;
+      overflow: hidden;
+    }
+
+    /* Face wrapper: untimed positioning shell, moved between FULL / TOP_HALF */
+    #face-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      transform-origin: 0 0;
+    }
+    #a-roll {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Wash: keeps brand tag + captions legible without grading the footage */
+    .wash {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(36,30,27,.34) 0%, rgba(36,30,27,0) 24%, rgba(36,30,27,0) 60%, rgba(36,30,27,.5) 100%);
+    }
+
+    /* Persistent brand tag + progress bar */
+    .brand {
+      position: absolute; top: 58px; left: 62px;
+      display: flex; align-items: center; gap: 13px;
+      color: #fff; font-family: var(--font-mono); font-size: 22px;
+      letter-spacing: .1em; text-transform: uppercase;
+      text-shadow: 0 1px 8px rgba(0,0,0,.35);
+    }
+    .brand i { display: block; width: 12px; height: 12px; border-radius: 50%; background: var(--maria-blue-pastel); }
+    .progress { position: absolute; top: 55px; right: 62px; width: 190px; height: 4px; overflow: hidden; background: rgba(253,251,248,.32); }
+    .progress b { display: block; width: 100%; height: 100%; transform-origin: left; background: var(--maria-blue-pastel); }
+
+    /* Hook (top headline, FULL mode) */
+    .hook { position: absolute; top: 142px; left: 58px; width: 900px; color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,.35); }
+    .hook .eyebrow { font-family: var(--font-mono); font-size: 22px; letter-spacing: .1em; text-transform: uppercase; color: #AACBDC; }
+    .hook h1 { margin: 17px 0 0; font-family: var(--font-display); font-size: 84px; line-height: .98; font-weight: 600; letter-spacing: -.03em; }
+    .hook h1 em { font-style: normal; color: var(--maria-blue-pastel); }
+
+    /* Verdict / CTA (FULL mode, upper-middle) */
+    .verdict { position: absolute; left: 54px; right: 54px; top: 240px; color: #fff; text-shadow: 0 2px 18px rgba(0,0,0,.35); }
+    .verdict .tag { display: inline-block; padding: 10px 15px; background: var(--maria-merlot); font-family: var(--font-mono); font-size: 17px; letter-spacing: .09em; text-transform: uppercase; color: #fff; }
+    .verdict h2 { margin: 20px 0 0; max-width: 850px; font-family: var(--font-display); font-size: 64px; line-height: .98; letter-spacing: -.03em; }
+
+    .cta-panel { position: absolute; left: 60px; right: 60px; top: 236px; padding: 32px 34px 30px; color: var(--maria-ink); background: var(--maria-cream-bg); border-bottom: 7px solid var(--maria-merlot); }
+    .cta-panel b { display: block; font-family: var(--font-display); font-size: 52px; line-height: .98; letter-spacing: -.03em; }
+    .cta-panel span { display: block; margin-top: 13px; font-size: 26px; color: var(--maria-ink-muted); }
+
+    /* Bottom-half dashboard panel: exact geometry from split-screen-panels skill */
+    .panel-bottom {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 960px;
+      height: 960px;
+      padding: 46px 56px 44px;
+      box-sizing: border-box;
+      background: var(--maria-cream-bg);
+      border-top: 6px solid var(--maria-blue-pastel);
+      box-shadow: 0 -18px 40px rgba(0, 0, 0, 0.45);
+      color: var(--maria-ink);
+      overflow: hidden;
+      transform: translateY(120px);
+    }
+    .panel-bottom .dash-head { display: flex; align-items: center; gap: 16px; }
+    .panel-bottom .dash-head .dot { width: 13px; height: 13px; border-radius: 999px; background: var(--maria-merlot); flex: none; }
+    .panel-bottom .dash-head .title { font-family: var(--font-mono); font-weight: 600; font-size: 24px; letter-spacing: .06em; text-transform: uppercase; color: var(--maria-ink-muted); flex: 1; }
+    .panel-bottom .dash-head .status { font-family: var(--font-mono); font-size: 18px; letter-spacing: .1em; color: var(--maria-merlot); text-transform: uppercase; }
+
+    .panel-bottom h2 { margin: 30px 0 0; font-family: var(--font-display); font-size: 60px; line-height: 1; letter-spacing: -.03em; max-width: 920px; }
+    .panel-bottom .sub { margin: 18px 0 0; font-size: 27px; line-height: 1.32; color: var(--maria-ink-muted); max-width: 880px; }
+
+    .kpis { display: flex; gap: 22px; margin-top: 40px; }
+    .kpi { flex: 1; border: 1px solid var(--maria-border); border-radius: 18px; padding: 20px 22px; background: rgba(253,251,248,.6); }
+    .kpi-label { font-family: var(--font-mono); font-size: 16px; letter-spacing: .08em; text-transform: uppercase; color: var(--maria-ink-muted); }
+    .kpi-val { font-family: var(--font-display); font-size: 52px; line-height: 1.08; margin-top: 4px; font-variant-numeric: tabular-nums; }
+    .kpi-val.hot { color: var(--maria-merlot); }
+
+    .compare { display: flex; flex-direction: column; gap: 18px; margin-top: 38px; }
+    .compare-row { display: flex; align-items: baseline; gap: 18px; }
+    .compare-row .lbl { font-family: var(--font-mono); font-size: 18px; letter-spacing: .06em; color: var(--maria-ink-muted); text-transform: uppercase; width: 240px; flex: none; }
+    .compare-row .val { font-family: var(--font-display); font-size: 34px; line-height: 1.15; }
+    .compare-row .val.hot { color: var(--maria-merlot); }
+
+    .funnel { display: flex; flex-direction: column; gap: 20px; margin-top: 36px; }
+    .funnel-row { display: flex; align-items: center; gap: 18px; }
+    .funnel-row .lbl { font-family: var(--font-mono); font-size: 18px; letter-spacing: .06em; color: var(--maria-ink-muted); text-transform: uppercase; width: 150px; flex: none; }
+    .funnel-row .bar-track { flex: 1; height: 22px; background: var(--maria-border); border-radius: 11px; overflow: hidden; }
+    .funnel-row .bar-fill { height: 100%; border-radius: 11px; background: var(--maria-blue-pastel); transform: scaleX(0); transform-origin: 0 50%; }
+    .funnel-row.hot .bar-fill { background: var(--maria-merlot); }
+    .funnel-row .val { font-family: var(--font-display); font-size: 28px; width: 110px; text-align: right; flex: none; }
+    .funnel-row.hot .val { color: var(--maria-merlot); }
+
+    .qa-row { display: flex; gap: 24px; margin-top: 40px; }
+    .qa-card { flex: 1; border: 1px solid var(--maria-border); border-radius: 20px; padding: 26px 24px; background: rgba(253,251,248,.6); text-align: center; }
+    .qa-card .q { font-family: var(--font-display); font-size: 44px; color: var(--maria-merlot); }
+    .qa-card .a { margin-top: 10px; font-size: 22px; color: var(--maria-ink-muted); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .04em; }
+
+    .checklist-body { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 26px; }
+    .checklist-body .check { border-top: 1px solid var(--maria-border); padding-top: 14px; font-size: 28px; line-height: 1.14; color: var(--maria-ink-muted); }
+    .checklist-body .check b { color: var(--maria-merlot); margin-right: 8px; }
+
+    /* Caption rail */
+    .rail-wrap {
+      position: absolute;
+      left: 64px;
+      right: 64px;
+      bottom: 170px;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .rail-wrap.top-half { bottom: 985px; }
+    .rail {
+      max-width: 920px;
+      text-align: center;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 46px;
+      line-height: 1.28;
+      color: #fff;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.7);
+      padding: 10px 28px;
+    }
+    .rail-wrap.top-half .rail {
+      font-size: 32px;
+      line-height: 1.2;
+      background: rgba(36, 30, 27, .58);
+      border-radius: 10px;
+      padding: 10px 24px;
+    }
+    .rail mark {
+      background: var(--maria-merlot);
+      color: #fff;
+      padding: 0 8px 3px;
+      border-radius: 6px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .rail .blue { color: var(--maria-blue-light); }
+  </style>
+</head>
+<body>
+  <div data-hf-id="hf-9uht" id="root" data-composition-id="maria-video-2" data-start="0" data-duration="64.56" data-width="1080" data-height="1920">
+
+    <div data-hf-id="hf-w3eg" id="face-wrapper">
+      <video data-hf-id="hf-2bbl" id="a-roll" src="assets/source/source.mp4" data-start="0" data-duration="64.56" data-track-index="0" muted playsinline></video>
+    </div>
+
+    <div data-hf-id="hf-bu6o" class="clip wash" id="wash" data-start="0" data-duration="64.56" data-track-index="1"></div>
+
+    <div data-hf-id="hf-uaic" class="clip brand" id="brand-tag" data-start="0" data-duration="64.56" data-track-index="2">
+      <i data-hf-id="hf-wt6k"></i>Maria Bejarano
+    </div>
+    <div data-hf-id="hf-0c50" class="clip progress" id="progress-wrap" data-start="0" data-duration="64.56" data-track-index="6">
+      <b data-hf-id="hf-i46v" id="progress-fill"></b>
+    </div>
+
+    <!-- FULL-mode overlays -->
+    <section data-hf-id="hf-wrff" class="clip hook" id="panel-hook" data-start="0" data-duration="4.7" data-track-index="5">
+      <div data-hf-id="hf-83gd" class="eyebrow">Meta Ads con criterio</div>
+      <h1 data-hf-id="hf-ezjw" id="hook-title">Tus campañas no venden y <em data-hf-id="hf-wnlm">Meta</em> no es el problema.</h1>
+    </section>
+
+    <section data-hf-id="hf-qllp" class="clip verdict" id="panel-verdict" data-start="57.32" data-duration="2.68" data-track-index="5">
+      <div data-hf-id="hf-j5hx" class="tag">La idea clave</div>
+      <h2 data-hf-id="hf-jg4b" id="verdict-title">No optimices a ciegas.</h2>
+    </section>
+
+    <section data-hf-id="hf-6c4o" class="clip cta-panel" id="panel-cta" data-start="60.50" data-duration="4.06" data-track-index="5">
+      <b data-hf-id="hf-lyqf" id="cta-title">Revisemos el sistema.</b>
+      <span data-hf-id="hf-rs2l">Sígueme y te enseño cómo hacerlo.</span>
+    </section>
+
+    <!-- TOP_HALF-mode bottom panels: media pantalla, dashboard-style mockups -->
+    <section data-hf-id="hf-cmqn" class="clip panel-bottom" id="panel-audiencia" data-start="11.04" data-duration="5.56" data-track-index="5">
+      <div data-hf-id="hf-qzsj" class="dash-head"><div data-hf-id="hf-lu65" class="dot"></div><div data-hf-id="hf-wboa" class="title">Meta Ads Manager</div><div data-hf-id="hf-uhvf" class="status">Audiencia fría</div></div>
+      <h2 data-hf-id="hf-8qa5" id="audiencia-title">Llegan, pero no quieren comprar.</h2>
+      <div data-hf-id="hf-w3q5" class="kpis">
+        <div data-hf-id="hf-tane" class="kpi"><div data-hf-id="hf-7cdk" class="kpi-label">Alcance</div><div data-hf-id="hf-uuuw" class="kpi-val">128.4K</div></div>
+        <div data-hf-id="hf-4lwu" class="kpi"><div data-hf-id="hf-19qa" class="kpi-label">CTR</div><div data-hf-id="hf-3sgg" class="kpi-val">1.8%</div></div>
+        <div data-hf-id="hf-507v" class="kpi"><div data-hf-id="hf-nsay" class="kpi-label">Compras</div><div data-hf-id="hf-qewj" class="kpi-val hot">0</div></div>
+      </div>
+      <p data-hf-id="hf-u83q" class="sub">Meta lleva tráfico a tu oferta. No decide si compran.</p>
+    </section>
+
+    <section data-hf-id="hf-20p9" class="clip panel-bottom" id="panel-mensaje" data-start="17.44" data-duration="5.56" data-track-index="5">
+      <div data-hf-id="hf-dtzn" class="dash-head"><div data-hf-id="hf-ww7l" class="dot"></div><div data-hf-id="hf-n19s" class="title">Tu mensaje hoy</div><div data-hf-id="hf-bnmm" class="status">Brief</div></div>
+      <h2 data-hf-id="hf-w15o" id="mensaje-title">El mensaje no conecta.</h2>
+      <div data-hf-id="hf-krut" class="compare">
+        <div data-hf-id="hf-nlkm" class="compare-row"><div data-hf-id="hf-bjyy" class="lbl">Dices</div><div data-hf-id="hf-vkeu" class="val">Explico mi método paso a paso</div></div>
+        <div data-hf-id="hf-klei" class="compare-row"><div data-hf-id="hf-y33n" class="lbl">Él necesita</div><div data-hf-id="hf-ie61" class="val hot">Que resuelvas SU problema</div></div>
+      </div>
+    </section>
+
+    <section data-hf-id="hf-uqmo" class="clip panel-bottom" id="panel-camino" data-start="23.24" data-duration="9.32" data-track-index="5">
+      <div data-hf-id="hf-dfom" class="dash-head"><div data-hf-id="hf-y34o" class="dot"></div><div data-hf-id="hf-s6l8" class="title">Camino de compra</div><div data-hf-id="hf-j2lw" class="status">Embudo</div></div>
+      <h2 data-hf-id="hf-a7z2" id="camino-title">Los leads se enfrían.</h2>
+      <div data-hf-id="hf-hli4" class="funnel">
+        <div data-hf-id="hf-z22r" class="funnel-row"><div data-hf-id="hf-3dpv" class="lbl">Alcance</div><div data-hf-id="hf-2kxp" class="bar-track"><div data-hf-id="hf-lztw" class="bar-fill" id="bar-alcance"></div></div><div data-hf-id="hf-zpb9" class="val">128.4K</div></div>
+        <div data-hf-id="hf-1m0z" class="funnel-row"><div data-hf-id="hf-wg7y" class="lbl">Clics</div><div data-hf-id="hf-dok1" class="bar-track"><div data-hf-id="hf-cucz" class="bar-fill" id="bar-clics"></div></div><div data-hf-id="hf-gxt1" class="val">9.2K</div></div>
+        <div data-hf-id="hf-17py" class="funnel-row"><div data-hf-id="hf-8ll9" class="lbl">Leads</div><div data-hf-id="hf-evh4" class="bar-track"><div data-hf-id="hf-9apu" class="bar-fill" id="bar-leads"></div></div><div data-hf-id="hf-00p9" class="val">640</div></div>
+        <div data-hf-id="hf-h3we" class="funnel-row hot"><div data-hf-id="hf-d9t9" class="lbl">Ventas</div><div data-hf-id="hf-eh63" class="bar-track"><div data-hf-id="hf-gbg0" class="bar-fill" id="bar-ventas"></div></div><div data-hf-id="hf-7h3m" class="val">12</div></div>
+      </div>
+    </section>
+
+    <section data-hf-id="hf-2hq1" class="clip panel-bottom" id="panel-oferta" data-start="32.56" data-duration="7.54" data-track-index="5">
+      <div data-hf-id="hf-d1dl" class="dash-head"><div data-hf-id="hf-xotn" class="dot"></div><div data-hf-id="hf-417q" class="title">Tu oferta</div><div data-hf-id="hf-26cy" class="status">Checkout</div></div>
+      <h2 data-hf-id="hf-ti0t" id="oferta-title">La oferta no se entiende.</h2>
+      <div data-hf-id="hf-bn65" class="qa-row">
+        <div data-hf-id="hf-r0sh" class="qa-card"><div data-hf-id="hf-8p7e" class="q">¿Qué consigo?</div><div data-hf-id="hf-apxc" class="a">Sin respuesta clara</div></div>
+        <div data-hf-id="hf-6wnp" class="qa-card"><div data-hf-id="hf-uddq" class="q">¿Por qué ahora?</div><div data-hf-id="hf-d92r" class="a">Sin urgencia real</div></div>
+      </div>
+    </section>
+
+    <section data-hf-id="hf-dzu5" class="clip panel-bottom" id="panel-checklist" data-start="40.40" data-duration="16.80" data-track-index="5">
+      <div data-hf-id="hf-cn2k" class="dash-head"><div data-hf-id="hf-vpai" class="dot"></div><div data-hf-id="hf-t3h8" class="title">Antes de tocar la campaña</div><div data-hf-id="hf-mspm" class="status">Checklist</div></div>
+      <h2 data-hf-id="hf-p434" id="checklist-title">Revisa esto primero.</h2>
+      <div data-hf-id="hf-ipad" class="checklist-body">
+        <div data-hf-id="hf-s277" class="check"><b data-hf-id="hf-27a2">01</b>Oferta definida</div>
+        <div data-hf-id="hf-06vy" class="check"><b data-hf-id="hf-2ll3">02</b>Mensaje conecta</div>
+        <div data-hf-id="hf-kzz3" class="check"><b data-hf-id="hf-2zw4">03</b>Creatividades generan intención</div>
+        <div data-hf-id="hf-3szh" class="check"><b data-hf-id="hf-3e75">04</b>Proceso de compra fácil</div>
+        <div data-hf-id="hf-g2m4" class="check"><b data-hf-id="hf-3si6">05</b>Campaña bien planteada</div>
+      </div>
+    </section>
+
+    <!-- Captions: full lower-third in FULL scenes, compact seam-strip in TOP_HALF scenes -->
+    <div data-hf-id="hf-zgwm" class="clip rail-wrap" id="cap-00" data-start="0" data-duration="4.12" data-track-index="3">
+      <div data-hf-id="hf-7ika" class="rail">Tus campañas no venden y <span data-hf-id="hf-1xxg" class="blue">Meta</span> seguramente no sea el problema.</div>
+    </div>
+    <div data-hf-id="hf-udan" class="clip rail-wrap" id="cap-01" data-start="4.84" data-duration="1.22" data-track-index="3">
+      <div data-hf-id="hf-2ept" class="rail">Cuando una campaña no vende,</div>
+    </div>
+    <div data-hf-id="hf-z65w" class="clip rail-wrap" id="cap-02" data-start="6.54" data-duration="2.26" data-track-index="3">
+      <div data-hf-id="hf-c2a9" class="rail">lo primero que hacemos es tocar la segmentación.</div>
+    </div>
+    <div data-hf-id="hf-zx1a" class="clip rail-wrap" id="cap-03" data-start="9.02" data-duration="1.44" data-track-index="3">
+      <div data-hf-id="hf-j03s" class="rail">Vamos, empezar por el final.</div>
+    </div>
+    <div data-hf-id="hf-3ucu" class="clip rail-wrap top-half" id="cap-04" data-start="11.04" data-duration="2.24" data-track-index="3">
+      <div data-hf-id="hf-48ye" class="rail">Meta puede llevar personas hasta tu oferta,</div>
+    </div>
+    <div data-hf-id="hf-el2c" class="clip rail-wrap top-half" id="cap-05" data-start="13.52" data-duration="2.62" data-track-index="3">
+      <div data-hf-id="hf-w27v" class="rail">pero no tiene por qué hacer que ellas <mark data-hf-id="hf-c3ih">quieran comprar</mark>.</div>
+    </div>
+    <div data-hf-id="hf-ym2o" class="clip rail-wrap top-half" id="cap-06" data-start="16.64" data-duration="0.78" data-track-index="3">
+      <div data-hf-id="hf-p19t" class="rail">Una vez que llegan</div>
+    </div>
+    <div data-hf-id="hf-pmgc" class="clip rail-wrap top-half" id="cap-07" data-start="17.44" data-duration="2.34" data-track-index="3">
+      <div data-hf-id="hf-4hfx" class="rail">puede fallar el mensaje porque explicas tu método,</div>
+    </div>
+    <div data-hf-id="hf-4gni" class="clip rail-wrap top-half" id="cap-08" data-start="19.88" data-duration="2.68" data-track-index="3">
+      <div data-hf-id="hf-l3eu" class="rail">pero <mark data-hf-id="hf-6gg5">no conectas</mark> con el problema que tu cliente quiere resolver.</div>
+    </div>
+    <div data-hf-id="hf-jgtk" class="clip rail-wrap top-half" id="cap-09" data-start="23.24" data-duration="1.78" data-track-index="3">
+      <div data-hf-id="hf-3o6j" class="rail">También puede fallar el camino hasta la compra.</div>
+    </div>
+    <div data-hf-id="hf-iczb" class="clip rail-wrap top-half" id="cap-10" data-start="25.40" data-duration="1.44" data-track-index="3">
+      <div data-hf-id="hf-ev8b" class="rail">Oye, la creatividad se atrae,</div>
+    </div>
+    <div data-hf-id="hf-qxky" class="clip rail-wrap top-half" id="cap-11" data-start="27.10" data-duration="2.20" data-track-index="3">
+      <div data-hf-id="hf-25tl" class="rail">la landing puede estar bien o generar alguna duda,</div>
+    </div>
+    <div data-hf-id="hf-x8g6" class="clip rail-wrap top-half" id="cap-12" data-start="29.32" data-duration="3.04" data-track-index="3">
+      <div data-hf-id="hf-uvdv" class="rail">pero los leads <mark data-hf-id="hf-y5kd">se enfrían</mark> antes de decidir.</div>
+    </div>
+    <div data-hf-id="hf-tfe7" class="clip rail-wrap top-half" id="cap-13" data-start="32.56" data-duration="2.16" data-track-index="3">
+      <div data-hf-id="hf-ijx0" class="rail">Otra opción que puede fallar es la oferta.</div>
+    </div>
+    <div data-hf-id="hf-ubjf" class="clip rail-wrap top-half" id="cap-14" data-start="35.10" data-duration="2.50" data-track-index="3">
+      <div data-hf-id="hf-ifpa" class="rail">Tu cliente <mark data-hf-id="hf-sj5t">no entiende</mark> qué consigue, por qué lo necesita</div>
+    </div>
+    <div data-hf-id="hf-nj9q" class="clip rail-wrap top-half" id="cap-15" data-start="37.62" data-duration="1.92" data-track-index="3">
+      <div data-hf-id="hf-1vdv" class="rail">o por qué debería comprarte ahora.</div>
+    </div>
+    <div data-hf-id="hf-yjns" class="clip rail-wrap top-half" id="cap-16" data-start="40.40" data-duration="2.32" data-track-index="3">
+      <div data-hf-id="hf-rdnt" class="rail">Entonces, antes de tocar la campaña, <mark data-hf-id="hf-92ng">revisa</mark>.</div>
+    </div>
+    <div data-hf-id="hf-8hi4" class="clip rail-wrap top-half" id="cap-17" data-start="43.44" data-duration="1.00" data-track-index="3">
+      <div data-hf-id="hf-9mhw" class="rail">¿Se entiende la oferta?</div>
+    </div>
+    <div data-hf-id="hf-qtw0" class="clip rail-wrap top-half" id="cap-18" data-start="45.28" data-duration="2.42" data-track-index="3">
+      <div data-hf-id="hf-yn4g" class="rail">El mensaje conecta con tu cliente,</div>
+    </div>
+    <div data-hf-id="hf-ry45" class="clip rail-wrap top-half" id="cap-19" data-start="48.08" data-duration="2.34" data-track-index="3">
+      <div data-hf-id="hf-a0fc" class="rail">las creatividades generan esa intención,</div>
+    </div>
+    <div data-hf-id="hf-16gh" class="clip rail-wrap top-half" id="cap-20" data-start="50.72" data-duration="2.36" data-track-index="3">
+      <div data-hf-id="hf-prsc" class="rail">tienes un proceso en el que la compra sea fácil</div>
+    </div>
+    <div data-hf-id="hf-ikop" class="clip rail-wrap top-half" id="cap-21" data-start="53.10" data-duration="3.60" data-track-index="3">
+      <div data-hf-id="hf-11kr" class="rail">y, por último, la campaña técnicamente está bien planteada.</div>
+    </div>
+    <div data-hf-id="hf-gzp2" class="clip rail-wrap" id="cap-22" data-start="57.32" data-duration="2.48" data-track-index="3">
+      <div data-hf-id="hf-lvfb" class="rail">No optimices <mark data-hf-id="hf-970l">a ciegas</mark> ni empieces a tocar cosas.</div>
+    </div>
+    <div data-hf-id="hf-yfv4" class="clip rail-wrap" id="cap-23" data-start="60.50" data-duration="2.96" data-track-index="3">
+      <div data-hf-id="hf-7xfm" class="rail">Si quieres aprender cómo hacerlo bien y <span data-hf-id="hf-235b" class="blue">escalar tu negocio</span>,</div>
+    </div>
+    <div data-hf-id="hf-syt2" class="clip rail-wrap" id="cap-24" data-start="63.68" data-duration="0.60" data-track-index="3">
+      <div data-hf-id="hf-xco1" class="rail">sígueme.</div>
+    </div>
+
+    <!-- SFX: face-transitions get a swoosh; panel swaps get pop/swoosh; formula start = peak - transient_offset -->
+    <audio data-hf-id="hf-b0nj" id="sfx-hook" src="assets/sfx/swoosh.wav" data-start="0.057" data-duration="0.859" data-volume="0.4" data-track-index="40"></audio>
+    <audio data-hf-id="hf-8fzu" id="sfx-tohalf" src="assets/sfx/swoosh.wav" data-start="10.797" data-duration="0.859" data-volume="0.4" data-track-index="40"></audio>
+    <audio data-hf-id="hf-poqp" id="sfx-mensaje" src="assets/sfx/pop.wav" data-start="17.02" data-duration="0.48" data-volume="0.4" data-track-index="40"></audio>
+    <audio data-hf-id="hf-pwu6" id="sfx-camino" src="assets/sfx/swoosh.wav" data-start="23.257" data-duration="0.859" data-volume="0.4" data-track-index="40"></audio>
+    <audio data-hf-id="hf-yxqf" id="sfx-oferta" src="assets/sfx/pop.wav" data-start="32.12" data-duration="0.48" data-volume="0.4" data-track-index="40"></audio>
+    <audio data-hf-id="hf-fi7q" id="sfx-checklist" src="assets/sfx/swoosh.wav" data-start="40.457" data-duration="0.859" data-volume="0.4" data-track-index="40"></audio>
+    <audio data-hf-id="hf-cuv4" id="sfx-tofull" src="assets/sfx/swoosh.wav" data-start="57.077" data-duration="0.859" data-volume="0.4" data-track-index="40"></audio>
+    <audio data-hf-id="hf-yuia" id="sfx-cta" src="assets/sfx/pop.wav" data-start="60.22" data-duration="0.48" data-volume="0.4" data-track-index="40"></audio>
+    <audio data-hf-id="hf-h6yz" id="sfx-verdict" src="assets/sfx/ding.wav" data-start="57.041" data-duration="1.0" data-volume="0.35" data-track-index="41"></audio>
+
+    <audio data-hf-id="hf-hqq3" id="a-roll-audio" src="assets/source/source.mp4" data-start="0" data-duration="64.56" data-track-index="20" data-volume="1"></audio>
+  </div>
+
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const FULL = { x: 0, y: 0, scale: 1 };
+      const TOP_HALF = { x: 0, y: -430, scale: 1 };
+
+      gsap.set('#face-wrapper', FULL);
+
+      // Ambient: brand tag entrance + continuous progress fill
+      tl.from('#brand-tag', { opacity: 0, y: -16, duration: 0.35, ease: 'power2.out' }, 0)
+        .from('#progress-wrap', { opacity: 0, duration: 0.35, ease: 'power2.out' }, 0.05)
+        .to('#progress-fill', { scaleX: 1, duration: 64.36, ease: 'none' }, 0.2);
+      gsap.set('#progress-fill', { scaleX: 0 });
+
+      // Face-mode transitions: fire 0.20s before the scene they lead into
+      tl.to('#face-wrapper', { ...TOP_HALF, duration: 0.45, ease: 'expo.inOut' }, 10.84);
+      tl.to('#face-wrapper', { ...FULL, duration: 0.45, ease: 'expo.inOut' }, 57.12);
+
+      // FULL-mode overlay entrances
+      tl.from('.hook .eyebrow', { opacity: 0, duration: 0.3 }, 0.12)
+        .from('#hook-title', { opacity: 0, y: 34, duration: 0.52, ease: 'power3.out' }, 0.2);
+
+      tl.from('.verdict .tag', { opacity: 0, duration: 0.28 }, 57.35)
+        .from('#verdict-title', { opacity: 0, y: 30, duration: 0.45, ease: 'power2.out' }, 57.45);
+
+      tl.from('#panel-cta', { scale: 0.94, opacity: 0, duration: 0.4, ease: 'power2.out' }, 60.55)
+        .from('#cta-title', { opacity: 0, y: 12, duration: 0.35, ease: 'power2.out' }, 60.65);
+
+      // Bottom-half panel entrances: slab rises from below (power3.out, no bounce)
+      tl.to('#panel-audiencia', { y: 0, opacity: 1, duration: 0.55, ease: 'power3.out' }, 11.1)
+        .from('#panel-audiencia .kpi', { opacity: 0, y: 14, duration: 0.3, stagger: 0.08, ease: 'power2.out' }, 11.35);
+
+      tl.to('#panel-mensaje', { y: 0, opacity: 1, duration: 0.55, ease: 'power3.out' }, 17.5)
+        .from('#panel-mensaje .compare-row', { opacity: 0, x: -18, duration: 0.32, stagger: 0.1, ease: 'power2.out' }, 17.75);
+
+      tl.to('#panel-camino', { y: 0, opacity: 1, duration: 0.55, ease: 'power3.out' }, 23.3)
+        .to('#bar-alcance', { scaleX: 1, duration: 0.5, ease: 'power2.out' }, 23.6)
+        .to('#bar-clics', { scaleX: 0.65, duration: 0.5, ease: 'power2.out' }, 23.72)
+        .to('#bar-leads', { scaleX: 0.28, duration: 0.5, ease: 'power2.out' }, 23.84)
+        .to('#bar-ventas', { scaleX: 0.05, duration: 0.5, ease: 'power2.out' }, 23.96);
+
+      tl.to('#panel-oferta', { y: 0, opacity: 1, duration: 0.55, ease: 'power3.out' }, 32.65)
+        .from('#panel-oferta .qa-card', { opacity: 0, y: 16, duration: 0.32, stagger: 0.1, ease: 'power2.out' }, 32.9);
+
+      tl.to('#panel-checklist', { y: 0, opacity: 1, duration: 0.55, ease: 'power3.out' }, 40.5)
+        .from('#panel-checklist .check', { opacity: 0, y: 14, duration: 0.32, stagger: 0.1, ease: 'power2.out' }, 40.8);
+
+      gsap.set(['#panel-audiencia', '#panel-mensaje', '#panel-camino', '#panel-oferta', '#panel-checklist'], { opacity: 0 });
+
+      const capTimings = [
+        { id: 'cap-00', start: 0, dur: 4.12 },
+        { id: 'cap-01', start: 4.84, dur: 1.22 },
+        { id: 'cap-02', start: 6.54, dur: 2.26 },
+        { id: 'cap-03', start: 9.02, dur: 1.44 },
+        { id: 'cap-04', start: 11.04, dur: 2.24 },
+        { id: 'cap-05', start: 13.52, dur: 2.62 },
+        { id: 'cap-06', start: 16.64, dur: 0.78 },
+        { id: 'cap-07', start: 17.44, dur: 2.34 },
+        { id: 'cap-08', start: 19.88, dur: 2.68 },
+        { id: 'cap-09', start: 23.24, dur: 1.78 },
+        { id: 'cap-10', start: 25.40, dur: 1.44 },
+        { id: 'cap-11', start: 27.10, dur: 2.20 },
+        { id: 'cap-12', start: 29.32, dur: 3.04 },
+        { id: 'cap-13', start: 32.56, dur: 2.16 },
+        { id: 'cap-14', start: 35.10, dur: 2.50 },
+        { id: 'cap-15', start: 37.62, dur: 1.92 },
+        { id: 'cap-16', start: 40.40, dur: 2.32 },
+        { id: 'cap-17', start: 43.44, dur: 1.00 },
+        { id: 'cap-18', start: 45.28, dur: 2.42 },
+        { id: 'cap-19', start: 48.08, dur: 2.34 },
+        { id: 'cap-20', start: 50.72, dur: 2.36 },
+        { id: 'cap-21', start: 53.10, dur: 3.60 },
+        { id: 'cap-22', start: 57.32, dur: 2.48 },
+        { id: 'cap-23', start: 60.50, dur: 2.96 },
+        { id: 'cap-24', start: 63.68, dur: 0.60 },
+      ];
+
+      capTimings.forEach((c) => {
+        const fade = Math.min(0.18, c.dur / 3);
+        tl.fromTo(
+          '#' + c.id + ' .rail',
+          { opacity: 0, y: 14 },
+          { opacity: 1, y: 0, duration: fade, ease: 'power2.out' },
+          c.start
+        ).to(
+          '#' + c.id + ' .rail',
+          { opacity: 0, y: -6, duration: fade, ease: 'power2.in' },
+          c.start + c.dur - fade
+        );
+      });
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines['maria-video-2'] = tl;
+    })();
+  </script>
+</body>
+</html>

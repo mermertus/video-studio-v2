@@ -1,0 +1,58 @@
+# Node
+node_modules/
+
+# Caches
+.cache/
+.tmp-*/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Hyperframes scratch renders (final.mp4 at each project root ships instead)
+renders/
+
+# Credentials / machine-local
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# Local-only media stash (large raw recordings, source music)
+raw-media/
+
+# Raw source video (heavy, local/Drive only — not git)
+video-projects/*/assets/source/
+
+# Playwright browser profiles
+.playwright-profile/
+
+# Frame-extraction scratch
+**/renders/frames/
+**/renders/frames-*/
+
+
+# SFX intermediates (sfx-generate.mjs writes mp3 then converts to wav)
+assets/sfx/*.mp3
+
+# Background music: audio pesado fuera de git (local/Drive); el manifest SI se versiona
+assets/music/*.wav
+assets/music/*.WAV
+
+# HeyGen Playwright session (no commitear)
+.heygen-profile/
+.heygen-auth.json
+
+# V4 Look3 — secuencias de frames PNG + media pesada (local/Drive, no git)
+video-projects/_fyj-V4-Look3/assets/
+video-projects/_fyj-V4-Look3-1x1/assets/
+**/.thumbnails/
+**/.waveform-cache/
+
+# Staging V4 — audio pesado (los transcripts JSON sí se versionan)
+_v4-staging/*.wav
+_v4-staging/*.m4a

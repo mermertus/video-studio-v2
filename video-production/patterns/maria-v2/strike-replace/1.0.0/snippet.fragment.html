@@ -1,0 +1,11 @@
+<div class="clip maria-v2-strike-replace"
+  data-start="{{START}}" data-duration="{{DURATION}}" data-track-index="{{TRACK}}">
+  <span class="maria-v2-strike-replace__old">{{OLD}}</span>
+  <span class="maria-v2-strike-replace__new">{{NEW}}</span>
+</div>
+<style>
+.maria-v2-strike-replace{font-family:"Work Sans",sans-serif;font-weight:800;color:var(--maria-ink,#241E1B)}
+.maria-v2-strike-replace__old{position:relative;opacity:.68}
+.maria-v2-strike-replace__old::after{content:"";position:absolute;left:-.04em;right:-.04em;top:52%;height:.12em;background:var(--maria-merlot,#5C1A2C);transform:scaleX(0);transform-origin:left}
+.maria-v2-strike-replace__new{display:block;color:var(--maria-blue-deep,#4A7691)}
+</style>

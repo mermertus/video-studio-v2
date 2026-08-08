@@ -1,0 +1,50 @@
+﻿{
+  "version": 1,
+  "tracks": {
+    "dramatic-tension": {
+      "file": "dramatic-tension.wav",
+      "duration": 171.0,
+      "mood": "tension",
+      "energy": "mid",
+      "bpm": null,
+      "loopable": false,
+      "use_for": ["build", "suspense", "problema", "background"],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "epic-inspire": {
+      "file": "epic-inspire.wav",
+      "duration": 144.0,
+      "mood": "epic",
+      "energy": "high",
+      "bpm": null,
+      "loopable": false,
+      "use_for": ["climax", "cta", "reveal-grande", "inspiracion"],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "majestic-harmony": {
+      "file": "majestic-harmony.wav",
+      "duration": 77.0,
+      "mood": "majestic",
+      "energy": "mid",
+      "bpm": null,
+      "loopable": false,
+      "use_for": ["intro", "background", "testimonios"],
+      "license": "Maria personal library",
+      "source": "curated"
+    },
+    "tense-war-drums": {
+      "file": "tense-war-drums.wav",
+      "duration": 65.0,
+      "mood": "war-drums",
+      "energy": "high",
+      "bpm": null,
+      "loopable": false,
+      "use_for": ["urgencia", "build", "conflicto"],
+      "license": "Maria personal library",
+      "source": "curated"
+    }
+  }
+}
+

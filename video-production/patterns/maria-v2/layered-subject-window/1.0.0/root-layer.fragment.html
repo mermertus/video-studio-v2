@@ -1,0 +1,12 @@
+<!-- Root-only recipe. Replace placeholders after installing the frozen copy. -->
+<video class="clip maria-v2-base"
+  data-start="{{START}}" data-duration="{{DURATION}}" data-track-index="0"
+  src="{{BASE_VIDEO}}" muted></video>
+<div class="clip maria-v2-layered-hero"
+  data-start="{{START}}" data-duration="{{DURATION}}" data-track-index="1">
+  {{SHORT_HERO}}
+</div>
+<video class="clip maria-v2-subject-alpha"
+  data-start="{{START}}" data-duration="{{DURATION}}" data-track-index="2"
+  src="{{ALPHA_VIDEO}}" muted></video>
+<!-- Literal captions remain on track 3 or above and never behind the subject. -->

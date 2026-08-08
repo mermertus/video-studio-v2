@@ -1,0 +1,8 @@
+{
+  "id": "accent-underline",
+  "version": "1.0.0",
+  "kind": "snippet",
+  "integration": "inline",
+  "entry": "snippet.fragment.html",
+  "immutable": true
+}

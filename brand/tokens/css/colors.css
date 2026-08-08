@@ -1,0 +1,46 @@
+/* ============================================================
+   COLOR TOKENS — María Bejarano
+   Source: uploads/index.html (approved brand manual deck)
+   ============================================================ */
+:root {
+  /* Base palette — approved brand colors */
+  --color-cream-bg: #FDFBF8;      /* Fondo claro — main canvas, never decorative */
+  --color-cream-surface: #F4EEE3; /* Crema cálida — secondary surfaces, rest areas */
+  --color-ink: #241E1B;           /* Tinta — text, footers, structure */
+  --color-ink-muted: #6E625D;     /* muted text / captions */
+  --color-border: #E8DED0;        /* hairline borders on warm surfaces */
+
+  --color-blue-pastel: #96BFD4;   /* Azul pastel — identidad de marca; también válido como FONDO, no solo como acento */
+  --color-blue-light: #C9E1EA;    /* Azul pastel claro — lavado de fondo preferido, alternativa a la crema */
+  --color-blue-deep: #4A7691;     /* azul más profundo para contraste de texto sobre azul */
+  --color-merlot: #5C1A2C;        /* Burdeos Merlot — palabras destacadas, CTAs, botones. El único acento decisivo. */
+  --color-merlot-wash: rgba(92, 26, 44, 0.08);
+  --color-blue-wash: rgba(150, 191, 212, 0.23);
+
+  /* Semantic aliases — use these in components */
+  --bg: var(--color-cream-bg);           /* fondo claro — lienzo por defecto */
+  --bg-blue: var(--color-blue-light);    /* campo de fondo alternativo (secciones, tarjetas, interfaz de producto) */
+  --surface: var(--color-cream-surface); /* crema cálida — usar CON CUIDADO; no debe dominar una composición (se ve amarilla a gran escala) */
+  --fg: var(--color-ink);
+  --fg-muted: var(--color-ink-muted);
+  --border: var(--color-border);
+  --brand: var(--color-blue-pastel);
+  --brand-light: var(--color-blue-light);
+  --brand-deep: var(--color-blue-deep);
+  --accent: var(--color-merlot);         /* palabras destacadas, CTAs, botones — nunca un campo de fondo */
+  --shell: var(--color-ink);
+
+  /* Captions — seleccionar explícitamente según el fondo de cada beat */
+  --caption-fg-on-media: #FFFFFF;
+  --caption-stroke-on-media: rgba(15, 13, 12, 0.88);
+  --caption-fg-on-light: var(--color-ink);
+  --caption-highlight-bg: var(--color-blue-deep);
+  --caption-highlight-alt-bg: var(--color-merlot);
+  --caption-highlight-fg: #FFFFFF;
+
+  /* Proporción de trabajo: fondo claro (o azul claro) como campo dominante,
+     azul pastel para identidad/secciones de fondo, Merlot reservado para
+     palabras destacadas, CTAs y botones — un único acento decisivo por pieza.
+     La crema cálida es un matiz ligero, no una base — usarla en exceso
+     desvía la paleta hacia el amarillo. */
+}

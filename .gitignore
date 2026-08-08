@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+yarn.lock
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Video projects - temp & cache
+video-production/video-projects/*/temp/
+video-production/video-projects/*/cache/
+video-production/video-projects/*/.next/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Optional render outputs (keep source, exclude renders)
+video-production/video-projects/*/output/*.mp4
+video-production/video-projects/*/output/*.webm
+video-production/video-projects/*/output/*.mov
+
+# Studio export hygiene
+incoming/
+.claude/
+video-production/.claude/
+video-production/node_modules/
+video-production/renders/
+video-production/raw-media/
+video-production/video-projects/*/assets/source/
+video-production/video-projects/*/renders/
+video-production/video-projects/*/snapshots/
+video-production/video-projects/*/.thumbnails/
+video-production/video-projects/*/.waveform-cache/

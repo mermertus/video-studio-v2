@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-29T00:12:59.764Z",
+  "policy": "Inventory only: no script is moved, renamed, deleted, or edited by this phase.",
+  "normalFlow": [
+    "Follow card",
+    "Preflight",
+    "Captions",
+    "Frame capture/extraction",
+    "SFX manifest and timing",
+    "Music bed",
+    "Staged render",
+    "QA"
+  ],
+  "counts": {
+    "Total": 79,
+    "Activo": 8,
+    "Activo V2": 4,
+    "Prueba": 6,
+    "Disponible": 6,
+    "Experimental": 3,
+    "Legacy HeyGen": 52,
+    "Desconocido": 0
+  },
+  "entries": [
+    {
+      "name": "__tests__/apply-maria-follow-card.test.mjs",
+      "path": "video-production/scripts/__tests__/apply-maria-follow-card.test.mjs",
+      "status": "Prueba",
+      "rationale": "Test automatizado de un script existente; se ejecuta para regresión y no durante una edición normal.",
+      "bytes": 2593,
+      "sha256": "33f1bc8785498a733df41bcdc96d750e578263dc24f72ad43923ccccd0ff5d94"
+    },
+    {
+      "name": "__tests__/music-bed.test.mjs",
+      "path": "video-production/scripts/__tests__/music-bed.test.mjs",
+      "status": "Prueba",
+      "rationale": "Test automatizado de un script existente; se ejecuta para regresión y no durante una edición normal.",
+      "bytes": 1416,
+      "sha256": "524d693d7cb5e16e73ebdd5b0518d17b5b1dbf491929e2e36495d72f3b785823"
+    },
+    {
+      "name": "__tests__/sfx-generate.test.mjs",
+      "path": "video-production/scripts/__tests__/sfx-generate.test.mjs",
+      "status": "Prueba",
+      "rationale": "Test automatizado de un script existente; se ejecuta para regresión y no durante una edición normal.",
+      "bytes": 518,
+      "sha256": "48deac2548432e98aca55f7cdb5baebc7c29908782159f9b2d18989ca1ba7d5c"
+    },
+    {
+      "name": "__tests__/sfx-manifest.test.mjs",
+      "path": "video-production/scripts/__tests__/sfx-manifest.test.mjs",
+      "status": "Prueba",
+      "rationale": "Test automatizado de un script existente; se ejecuta para regresión y no durante una edición normal.",
+      "bytes": 1187,
+      "sha256": "d414f57086e6d1b3465454bb3150bb6340cbba8677ec027ee7a8b853e79b1b3e"
+    },
+    {
+      "name": "__tests__/sfx-measure.test.mjs",
+      "path": "video-production/scripts/__tests__/sfx-measure.test.mjs",
+      "status": "Prueba",
+      "rationale": "Test automatizado de un script existente; se ejecuta para regresión y no durante una edición normal.",
+      "bytes": 1580,
+      "sha256": "7e5f40ca457a3a7a4099dbc583c3a84dfbdf98e04a4bf14e83017e7089a6ee87"
+    },
+    {
+      "name": "__tests__/stage-render.test.mjs",
+      "path": "video-production/scripts/__tests__/stage-render.test.mjs",
+      "status": "Prueba",
+      "rationale": "Test automatizado de un script existente; se ejecuta para regresión y no durante una edición normal.",
+      "bytes": 1412,
+      "sha256": "66d3274731e141f48c6bfb0e111dbf16c1f531d8834736eaa18323ca7a563b99"
+    },
+    {
+      "name": "_debug-knobs.mjs",
+      "path": "video-production/scripts/_debug-knobs.mjs",
+      "status": "Experimental",
+      "rationale": "Herramienta de depuración; no forma parte del flujo.",
+      "bytes": 1321,
+      "sha256": "549554ef2b4138178e64a3c5ec6ae427928ae713538f7aa6e19400f9fa35715d"
+    },
+    {
+      "name": "apply-maria-follow-card.mjs",
+      "path": "video-production/scripts/apply-maria-follow-card.mjs",
+      "status": "Activo",
+      "rationale": "Inserta o actualiza el cierre oficial de seguimiento antes del preflight.",
+      "bytes": 12143,
+      "sha256": "8e9de5d763b6a9031db7e5964345be3f98506fef7cebe1f0e7c710724e6cea65"
+    },
+    {
+      "name": "debug-s1-paraTi.mjs",
+      "path": "video-production/scripts/debug-s1-paraTi.mjs",
+      "status": "Experimental",
+      "rationale": "Depuración ligada a una escena/caso concreto; no reutilizable por defecto.",
+      "bytes": 1615,
+      "sha256": "79cb16ac46bc1e57ab0b3dfe7a96c5c6df58317547a338b6ca4df5b256f46519"
+    },
+    {
+      "name": "extract-frames.mjs",
+      "path": "video-production/scripts/extract-frames.mjs",
+      "status": "Activo",
+      "rationale": "Extrae evidencia visual de un MP4 para QA posterior al render.",
+      "bytes": 1175,
+      "sha256": "2972811a9eda38e2c1331a5ff2e2dab975faf288ed475b35001807c9d39bcf80"
+    },
+    {
+      "name": "frame.mjs",
+      "path": "video-production/scripts/frame.mjs",
+      "status": "Disponible",
+      "rationale": "Diagnóstico puntual de un frame durante authoring.",
+      "bytes": 6089,
+      "sha256": "b3c5c10b7b5d8ec45d8e0fe8ff6d3f9d0c1549cf5ec4eba4d21021c38289333e"
+    },
+    {
+      "name": "generate-captions.mjs",
+      "path": "video-production/scripts/generate-captions.mjs",
+      "status": "Activo",
+      "rationale": "Genera la capa de captions a partir de la transcripción del proyecto.",
+      "bytes": 9101,
+      "sha256": "c614ece96bca29a048f420388243ae3ae7d316d249a5b3aba0b01ade3a8b29c6"
+    },
+    {
+      "name": "heygen-addscene.mjs",
+      "path": "video-production/scripts/heygen-addscene.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2284,
+      "sha256": "a60c83d698f083726b05c5e0e2298bf4fc4539bb8ca9b0bc45ae1bc0b2d5b612"
+    },
+    {
+      "name": "heygen-apply-audio.mjs",
+      "path": "video-production/scripts/heygen-apply-audio.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2387,
+      "sha256": "2fb1b6bb970c017fef84d07780c9fcd712c2a0c3dec8790aa2618524877e960f"
+    },
+    {
+      "name": "heygen-audio-probe.mjs",
+      "path": "video-production/scripts/heygen-audio-probe.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1853,
+      "sha256": "79d776842a033d6193c6af2629b5b6c81f4010b1f8a3f621fcbc73b4c02d0000"
+    },
+    {
+      "name": "heygen-audio.mjs",
+      "path": "video-production/scripts/heygen-audio.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2759,
+      "sha256": "218863947f1e12586f3b1e28a86f964e520825f5a71c9ad380f5e4c00aec809c"
+    },
+    {
+      "name": "heygen-audio2.mjs",
+      "path": "video-production/scripts/heygen-audio2.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 3088,
+      "sha256": "6938fed953e3b5b0a5a7d0d9ee81883dedf7621bf39b2cb9ca078697f3106128"
+    },
+    {
+      "name": "heygen-audio3.mjs",
+      "path": "video-production/scripts/heygen-audio3.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2713,
+      "sha256": "fcebf47d2fc2b23929fa015412f181f8f6d18ec65ca7d75d476f1971c823ebca"
+    },
+    {
+      "name": "heygen-audio4.mjs",
+      "path": "video-production/scripts/heygen-audio4.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2656,
+      "sha256": "b5aaa9351ebc09f789503d04ff41c8828eb7ba0bb73509d7e0e876db2feec005"
+    },
+    {
+      "name": "heygen-audio5.mjs",
+      "path": "video-production/scripts/heygen-audio5.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2864,
+      "sha256": "50959da4704f8deb4b793e88f4ad5181b021c5f781a9a0864d1deca09989e6ff"
+    },
+    {
+      "name": "heygen-check.mjs",
+      "path": "video-production/scripts/heygen-check.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1119,
+      "sha256": "3fb1df7e7cc537442a56f44775e18b7e735452fc78248d22265cf028d26fb4e7"
+    },
+    {
+      "name": "heygen-checkproj.mjs",
+      "path": "video-production/scripts/heygen-checkproj.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 964,
+      "sha256": "d3da75cec5546847d81a56ee027abf67c78d7baaeee83c9717a643d9871f75c7"
+    },
+    {
+      "name": "heygen-chip.mjs",
+      "path": "video-production/scripts/heygen-chip.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2041,
+      "sha256": "d22eb9f71eff72dc5ed82974b055d3d38c4601db829abe64b069f473a8a2b1a7"
+    },
+    {
+      "name": "heygen-del-s1.mjs",
+      "path": "video-production/scripts/heygen-del-s1.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2571,
+      "sha256": "d8ba129c55c11ad7baf4a8a0337a776a65cdb0575be7a74853d5237df94f52f6"
+    },
+    {
+      "name": "heygen-delremove.mjs",
+      "path": "video-production/scripts/heygen-delremove.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1471,
+      "sha256": "62221ad70cd9c2cee38d7e4f9a6752ca9bc622a7262b3382e6924d3c1f328988"
+    },
+    {
+      "name": "heygen-editor-explore.mjs",
+      "path": "video-production/scripts/heygen-editor-explore.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1665,
+      "sha256": "5434afb2f768d7ce8fa78d8e7607d758f3ab45fc6089c99a47dfa340ade9e70d"
+    },
+    {
+      "name": "heygen-engine-v.mjs",
+      "path": "video-production/scripts/heygen-engine-v.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1949,
+      "sha256": "7687a43c5d063654cf4fb763c9b49b71a2a440aadbcb5ccbc858b2f673cba9b7"
+    },
+    {
+      "name": "heygen-explore.mjs",
+      "path": "video-production/scripts/heygen-explore.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 872,
+      "sha256": "fb0b7f6510eb679983be239d3b6e61a6e05b5c25934c099b1fa995ca2a0b41b1"
+    },
+    {
+      "name": "heygen-explore2.mjs",
+      "path": "video-production/scripts/heygen-explore2.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1501,
+      "sha256": "e75f0b98d522cf500421c38c6a6fd866b4cd3f008c63fef72259c75ea8c7a654"
+    },
+    {
+      "name": "heygen-explore3.mjs",
+      "path": "video-production/scripts/heygen-explore3.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1394,
+      "sha256": "16339196e20b2a041f038cd873e27dfa73c942ebed8d954cc74841ffd7e71bb0"
+    },
+    {
+      "name": "heygen-find-drafts.mjs",
+      "path": "video-production/scripts/heygen-find-drafts.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1173,
+      "sha256": "63bd12ad66d6efcac93e7109fb8f0b2b68426cd684356107387e13fbf2f64272"
+    },
+    {
+      "name": "heygen-gen2.mjs",
+      "path": "video-production/scripts/heygen-gen2.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1745,
+      "sha256": "6236949e4a349237ff1fedb9dd05fee372cef52f5ea6550fddee4d2c3ff50694"
+    },
+    {
+      "name": "heygen-gen3.mjs",
+      "path": "video-production/scripts/heygen-gen3.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1684,
+      "sha256": "8c30df0f355f9c8fcb818cf762e7d1730ffc10668908bfca4a8c42a007f5b562"
+    },
+    {
+      "name": "heygen-generate.mjs",
+      "path": "video-production/scripts/heygen-generate.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1715,
+      "sha256": "53729314194afc4aa1b6ce9cfa6fdf8f696f628511611c4f5e839d944742e34c"
+    },
+    {
+      "name": "heygen-leftmap.mjs",
+      "path": "video-production/scripts/heygen-leftmap.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2087,
+      "sha256": "28eeefec6c7d0328eae77dbc043c8b07e62afd70df9f4dba9ebd395c9cc2726c"
+    },
+    {
+      "name": "heygen-leftpanel.mjs",
+      "path": "video-production/scripts/heygen-leftpanel.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1706,
+      "sha256": "98ea6b1f24ac83d84e96672e9a796a3f7c8c8da81064b89ac913fccc19e70c59"
+    },
+    {
+      "name": "heygen-login.mjs",
+      "path": "video-production/scripts/heygen-login.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2132,
+      "sha256": "04174b02deb52016305ab13f56f9bc67ca569b4b3c94c9af644828b1accc6588"
+    },
+    {
+      "name": "heygen-probe-dropdowns.mjs",
+      "path": "video-production/scripts/heygen-probe-dropdowns.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2230,
+      "sha256": "d960d8419173431ed58437afdca89b3b3990f83106e414488a52a1c8ca2431c2"
+    },
+    {
+      "name": "heygen-setup-look.mjs",
+      "path": "video-production/scripts/heygen-setup-look.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2273,
+      "sha256": "d3cf2ef34a7c601bc60b392a22198e9bc594b1c8c6c88c468c114e4d73be8452"
+    },
+    {
+      "name": "heygen-setup2.mjs",
+      "path": "video-production/scripts/heygen-setup2.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2583,
+      "sha256": "897cd0d1dc84aab1db83f6567131fa10179932b29178622e01208fc6411fa515"
+    },
+    {
+      "name": "heygen-upload-modal.mjs",
+      "path": "video-production/scripts/heygen-upload-modal.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2528,
+      "sha256": "1148d14007c8a6b938bdb677fac067d966d02877bed1f6b3f04defa704ff5e54"
+    },
+    {
+      "name": "heygen-verify-headed.mjs",
+      "path": "video-production/scripts/heygen-verify-headed.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 968,
+      "sha256": "e6ac801364ec08c51ebd5975d55f0132e25508ad7b1ae4702e43d1ea092c1fe7"
+    },
+    {
+      "name": "hg-audio.mjs",
+      "path": "video-production/scripts/hg-audio.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1631,
+      "sha256": "ac93a3fde10e4cc99b4843af50bfbf988e502e3a4fae4a2facf7b89912769192"
+    },
+    {
+      "name": "hg-audio2.mjs",
+      "path": "video-production/scripts/hg-audio2.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1355,
+      "sha256": "3aed9265c2124ce1d67ea068849f81d8ba7010c1b7393a38716f72d79e358b05"
+    },
+    {
+      "name": "hg-draft-menu.mjs",
+      "path": "video-production/scripts/hg-draft-menu.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1369,
+      "sha256": "b32338d3412644ec562c623d680f0ec0e2e3c56aeb2d2fe5a9493bf02c77688d"
+    },
+    {
+      "name": "hg-editor.mjs",
+      "path": "video-production/scripts/hg-editor.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1395,
+      "sha256": "c6700ed815b5ceb94e73e6a2cfceda479ce6ec7c09e8019995d2ab4ff056dd67"
+    },
+    {
+      "name": "hg-engine.mjs",
+      "path": "video-production/scripts/hg-engine.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1202,
+      "sha256": "43c0e9310ee0bb5cfb081138198786f25eda9108fb2c6ab9b066801750795382"
+    },
+    {
+      "name": "hg-engine2.mjs",
+      "path": "video-production/scripts/hg-engine2.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1307,
+      "sha256": "4c5e6f03438693ce1556258211b6bc18b6e9491874a10ff9564929dc794aacf7"
+    },
+    {
+      "name": "hg-fileinput.mjs",
+      "path": "video-production/scripts/hg-fileinput.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1626,
+      "sha256": "63caf728d0463c0e13306db74ceb17eb3bf1368f0fd43d334f2cc26edacd3ee8"
+    },
+    {
+      "name": "hg-full.mjs",
+      "path": "video-production/scripts/hg-full.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1041,
+      "sha256": "fb070d223010a5427d3057c1f641b492b9a3b156ec36553d829991170d1a2225"
+    },
+    {
+      "name": "hg-generate.mjs",
+      "path": "video-production/scripts/hg-generate.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2254,
+      "sha256": "73b306f92eda73770033b9a4d11b7ba4451c8786276d58eeacce04b7fb8cfaed"
+    },
+    {
+      "name": "hg-hamburger.mjs",
+      "path": "video-production/scripts/hg-hamburger.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 979,
+      "sha256": "53ca5f8ade1af8a28dfcf8576b0e0d042dc6277ca706f94f5ad2e5531a03f22c"
+    },
+    {
+      "name": "hg-headed-edit.mjs",
+      "path": "video-production/scripts/hg-headed-edit.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1236,
+      "sha256": "81fb0e717152116b3e901a3af9ec74721207a04f94e1eb8a9d44ef44623cdfda"
+    },
+    {
+      "name": "hg-left.mjs",
+      "path": "video-production/scripts/hg-left.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1304,
+      "sha256": "d049ddf7f850cc882999e16f6ffe1228c8a589b0a75d1cb98b8324143f612805"
+    },
+    {
+      "name": "hg-open-draft.mjs",
+      "path": "video-production/scripts/hg-open-draft.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1340,
+      "sha256": "edc53d1fa2b37ccf768e28784f86a01077f882afbe0b4370a3c4dd7cce63339a"
+    },
+    {
+      "name": "hg-open2.mjs",
+      "path": "video-production/scripts/hg-open2.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1282,
+      "sha256": "4df3c8c73db98b7e30fbf9ef6a8e0464e90934cfa3db4540966ac734c7590518"
+    },
+    {
+      "name": "hg-quick.mjs",
+      "path": "video-production/scripts/hg-quick.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1130,
+      "sha256": "1c29c6dff6c9583e8f44851fe77f1750cb0e04ee06681e5897115e17c52d129b"
+    },
+    {
+      "name": "hg-studio-open.mjs",
+      "path": "video-production/scripts/hg-studio-open.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1290,
+      "sha256": "bdaf5bb5246b82dbc20127affabd7b9900a8703640529743e2a71282c3631ae1"
+    },
+    {
+      "name": "hg-swap.mjs",
+      "path": "video-production/scripts/hg-swap.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 2090,
+      "sha256": "58b635d573a6abd77fe2566a24ad068b28afe88af568bd18cc3e42e7cb4c4855"
+    },
+    {
+      "name": "hg-swap2.mjs",
+      "path": "video-production/scripts/hg-swap2.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1431,
+      "sha256": "90e669ad3d9ad956e42fd9060b0871899fecf4b07e4dd9b45a40f17219973b5f"
+    },
+    {
+      "name": "hg-topmenu.mjs",
+      "path": "video-production/scripts/hg-topmenu.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1452,
+      "sha256": "a86fe8f634af3b7e80b590bbe731e2a7d2f21069ae0d6312f16ddffa0de4ee66"
+    },
+    {
+      "name": "hg-upload.mjs",
+      "path": "video-production/scripts/hg-upload.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1947,
+      "sha256": "a7a82bfc47fb188e0941fad3b706cc4f4c74289f9b177bf2f739216683cca706"
+    },
+    {
+      "name": "hg-upload2.mjs",
+      "path": "video-production/scripts/hg-upload2.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1682,
+      "sha256": "ecdca12631f8b81a36244bcb3862f44d800980f23cdde24b97f5fa0730495a75"
+    },
+    {
+      "name": "hg-upload3.mjs",
+      "path": "video-production/scripts/hg-upload3.mjs",
+      "status": "Legacy HeyGen",
+      "rationale": "Automatización heredada de HeyGen; se conserva, pero queda fuera del flujo normal de María.",
+      "bytes": 1945,
+      "sha256": "2b750e906faf4a1b9462ad1ea78701d74dcb20416893375129e99ae0c5147dc2"
+    },
+    {
+      "name": "maria-v2/apply-maria-pattern.mjs",
+      "path": "video-production/scripts/maria-v2/apply-maria-pattern.mjs",
+      "status": "Activo V2",
+      "rationale": "Herramienta aditiva y opt-in de patrones, validación, capacidades o promoción eficiente de María V2.",
+      "bytes": 6263,
+      "sha256": "4bfa443459d3e85a853b86a289981a3ff5597991ac262d3a41682359e796bf46"
+    },
+    {
+      "name": "maria-v2/check-matte-capability.mjs",
+      "path": "video-production/scripts/maria-v2/check-matte-capability.mjs",
+      "status": "Activo V2",
+      "rationale": "Herramienta aditiva y opt-in de patrones, validación, capacidades o promoción eficiente de María V2.",
+      "bytes": 1279,
+      "sha256": "1ea288818f9a8709d9f4209b0c8e000c958833772b40ca9e8853cdd73b8f9e55"
+    },
+    {
+      "name": "maria-v2/promote-master-candidate.mjs",
+      "path": "video-production/scripts/maria-v2/promote-master-candidate.mjs",
+      "status": "Activo V2",
+      "rationale": "Herramienta aditiva y opt-in de patrones, validación, capacidades o promoción eficiente de María V2.",
+      "bytes": 3130,
+      "sha256": "f448ab13b0d8790c313d533e7cdea874bec645cc3a71b6d495088b8d81c33d82"
+    },
+    {
+      "name": "maria-v2/validate-maria-patterns.mjs",
+      "path": "video-production/scripts/maria-v2/validate-maria-patterns.mjs",
+      "status": "Activo V2",
+      "rationale": "Herramienta aditiva y opt-in de patrones, validación, capacidades o promoción eficiente de María V2.",
+      "bytes": 7357,
+      "sha256": "8f24f8f739ba93dc7899508262fde0ab2ae5e328b9bfffc7f346b93b4a013404"
+    },
+    {
+      "name": "music-bed.mjs",
+      "path": "video-production/scripts/music-bed.mjs",
+      "status": "Activo",
+      "rationale": "Construye la cama musical definida por el plan local del proyecto.",
+      "bytes": 2792,
+      "sha256": "f4a7506899daa16f4759ec021836ca520a8be6b87296a4da2efba1ac791ca005"
+    },
+    {
+      "name": "preflight.mjs",
+      "path": "video-production/scripts/preflight.mjs",
+      "status": "Activo",
+      "rationale": "Comprueba el proyecto antes de preview/render.",
+      "bytes": 13667,
+      "sha256": "6ed3cdcd4768812dc76fbfada990d316c316903a33ba9ca44696c2f51fe5c59f"
+    },
+    {
+      "name": "quick-frame.mjs",
+      "path": "video-production/scripts/quick-frame.mjs",
+      "status": "Disponible",
+      "rationale": "Captura rápida opcional para diagnóstico.",
+      "bytes": 3391,
+      "sha256": "1a7044591c0c47cde7c729ecbfa600cc95846105c3a05631a648b01ed0da4ec4"
+    },
+    {
+      "name": "scrub-crop.mjs",
+      "path": "video-production/scripts/scrub-crop.mjs",
+      "status": "Disponible",
+      "rationale": "Inspección opcional de crop/reencuadre.",
+      "bytes": 2456,
+      "sha256": "23a0efc08cc91092ddcdaa37289c770611def27f2c16818ce47bb5aa46375f0a"
+    },
+    {
+      "name": "scrub-standalone.mjs",
+      "path": "video-production/scripts/scrub-standalone.mjs",
+      "status": "Disponible",
+      "rationale": "Inspección opcional de una composición independiente.",
+      "bytes": 3455,
+      "sha256": "cf6255ab18d8b438c408980b06cac1542ae135a7dde8823d05faf9597e13ccb7"
+    },
+    {
+      "name": "scrub-wrapper.mjs",
+      "path": "video-production/scripts/scrub-wrapper.mjs",
+      "status": "Disponible",
+      "rationale": "Inspección opcional mediante wrapper de preview.",
+      "bytes": 3159,
+      "sha256": "edc2063822e9b4b492ea84dde0850d19f8ec603f4c19ca6c8eaaccb30287dd54"
+    },
+    {
+      "name": "sfx-generate.mjs",
+      "path": "video-production/scripts/sfx-generate.mjs",
+      "status": "Experimental",
+      "rationale": "Generación externa de SFX; requiere credenciales y aprobación separada.",
+      "bytes": 3267,
+      "sha256": "aed1fb3a0614272cc47cdf56a37ac4868ee78e873807dd34f74a35a6795a73cf"
+    },
+    {
+      "name": "sfx-manifest.mjs",
+      "path": "video-production/scripts/sfx-manifest.mjs",
+      "status": "Activo",
+      "rationale": "Valida y mantiene el manifiesto compartido de efectos.",
+      "bytes": 1923,
+      "sha256": "867053573784e62bbb4a49ea556aee58eff48a5d31212db68c817b0f02e0d5ae"
+    },
+    {
+      "name": "sfx-measure.mjs",
+      "path": "video-production/scripts/sfx-measure.mjs",
+      "status": "Activo",
+      "rationale": "Mide el transient offset necesario para sincronizar efectos nuevos.",
+      "bytes": 1535,
+      "sha256": "512d9470d1bd94e54dcf2b11cfcf7f8de42b91e23f5b1c45bf3490d22fea789d"
+    },
+    {
+      "name": "stage-render.mjs",
+      "path": "video-production/scripts/stage-render.mjs",
+      "status": "Activo",
+      "rationale": "Apoya el render por etapas del flujo HyperFrames actual.",
+      "bytes": 2352,
+      "sha256": "be757427081c1cd3d80dba8be99f2b5e13c3e649bc729412588c0a31367deff5"
+    },
+    {
+      "name": "verify-wrapper.mjs",
+      "path": "video-production/scripts/verify-wrapper.mjs",
+      "status": "Disponible",
+      "rationale": "Verificación auxiliar del wrapper de composición.",
+      "bytes": 1134,
+      "sha256": "a67f31f807aa155804b2f76f80c5bbe0d28d9230019855c3d138ef3a8965abc9"
+    }
+  ]
+}

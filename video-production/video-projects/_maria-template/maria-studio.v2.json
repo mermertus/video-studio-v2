@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "edition": "MARIA-V2",
+  "optIn": true,
+  "coexistence": {
+    "inheritExistingEdit": true,
+    "replaceExistingRules": false,
+    "migrateLegacyProjectsImplicitly": false
+  },
+  "productionProfile": "economical",
+  "visualBudget": {
+    "heroCadenceApproxSeconds": 25,
+    "heroCadenceIsQuota": false,
+    "maxHighStimuliPer60s": 2,
+    "minSecondsBetweenStrongStimuli": 1.2,
+    "maxFunctionalSupportsPer60s": 5,
+    "allowConcurrentStrongStimuli": false
+  },
+  "qaBudget": {
+    "candidateIsFinalQuality": true,
+    "maxFullAudits": 1,
+    "maxGroupedFixPasses": 1,
+    "maxDeltaVerifications": 1,
+    "defaultRepresentativeFrameBudget": 10,
+    "temporalBurstOnlyForRiskyEffects": true,
+    "promoteApprovedCandidateWithoutRerender": true
+  },
+  "patternPolicy": {
+    "approvedOnlyInRealProjects": true,
+    "autoEligibleOnlyByDefault": true,
+    "fallbackAfterFirstComplexFailure": true,
+    "freezeLocalCopy": true
+  }
+}

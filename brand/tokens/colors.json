@@ -1,0 +1,35 @@
+{
+  "source": "../incoming/brand-zip-extracted/tokens/colors.css",
+  "colors": {
+    "creamBg": "#FDFBF8",
+    "creamSurface": "#F4EEE3",
+    "ink": "#241E1B",
+    "inkMuted": "#6E625D",
+    "border": "#E8DED0",
+    "bluePastel": "#96BFD4",
+    "blueLight": "#C9E1EA",
+    "blueDeep": "#4A7691",
+    "merlot": "#5C1A2C",
+    "merlotWash": "rgba(92, 26, 44, 0.08)",
+    "blueWash": "rgba(150, 191, 212, 0.23)"
+  },
+  "semantic": {
+    "bg": "creamBg",
+    "bgBlue": "blueLight",
+    "surface": "creamSurface",
+    "fg": "ink",
+    "fgMuted": "inkMuted",
+    "brand": "bluePastel",
+    "brandLight": "blueLight",
+    "brandDeep": "blueDeep",
+    "accent": "merlot",
+    "captionHighlight": "blueDeep",
+    "captionHighlightAlt": "merlot"
+  },
+  "rules": [
+    "El azul sostiene, el Merlot decide.",
+    "Merlot debe usarse como acento decisivo, normalmente una vez por pantalla.",
+    "No usar texto blanco sobre azul pastel.",
+    "La crema calida no debe dominar composiciones grandes."
+  ]
+}

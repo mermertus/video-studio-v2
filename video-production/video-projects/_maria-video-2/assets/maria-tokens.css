@@ -1,0 +1,63 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+:root {
+  --maria-cream-bg: #FDFBF8;
+  --maria-cream-surface: #F4EEE3;
+  --maria-ink: #241E1B;
+  --maria-ink-muted: #6E625D;
+  --maria-border: #E8DED0;
+  --maria-blue-pastel: #96BFD4;
+  --maria-blue-light: #C9E1EA;
+  --maria-blue-deep: #4A7691;
+  --maria-merlot: #5C1A2C;
+  --maria-merlot-wash: rgba(92, 26, 44, 0.08);
+  --maria-blue-wash: rgba(150, 191, 212, 0.23);
+
+  --bg: var(--maria-cream-bg);
+  --bg-blue: var(--maria-blue-light);
+  --surface: var(--maria-cream-surface);
+  --fg: var(--maria-ink);
+  --fg-muted: var(--maria-ink-muted);
+  --border: var(--maria-border);
+  --brand: var(--maria-blue-pastel);
+  --brand-light: var(--maria-blue-light);
+  --brand-deep: var(--maria-blue-deep);
+  --accent: var(--maria-merlot);
+
+  --font-display: 'Source Serif 4', 'Iowan Old Style', 'Charter', Georgia, serif;
+  --font-body: 'Work Sans', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 26px;
+  --radius-xl: 34px;
+  --radius-pill: 999px;
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+}
+
+.maria-kicker {
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.maria-hero {
+  font-family: var(--font-display);
+  color: var(--fg);
+}
+
+.maria-accent {
+  color: var(--accent);
+}
+
+

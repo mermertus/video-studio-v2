@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "status": "blocked-until-real-case",
+  "legacySkillAllowed": false,
+  "futureSkillName": "maria-long-form-production",
+  "requiredInputs": [
+    "objective",
+    "audience",
+    "platform",
+    "aspectRatio",
+    "approximateDuration",
+    "scriptAudioOrOutline",
+    "availableMariaMaterial",
+    "cta",
+    "referenceAndBorrowedAspects"
+  ],
+  "pilot": {
+    "required": true,
+    "durationSeconds": [60, 90],
+    "briefApprovalRequired": true,
+    "storyboardApprovalRequired": true,
+    "draftQaRequired": true,
+    "humanApprovalRequired": true
+  }
+}

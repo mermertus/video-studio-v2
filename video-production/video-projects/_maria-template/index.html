@@ -1,0 +1,152 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Maria Bejarano - Template</title>
+  <link rel="stylesheet" href="assets/maria-tokens.css" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: var(--bg); overflow: hidden; }
+    body { font-family: var(--font-body); color: var(--fg); }
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      background:
+        radial-gradient(circle at 72% 18%, var(--maria-blue-wash), transparent 34%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-blue) 100%);
+      overflow: hidden;
+    }
+    .scene {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 128px 82px;
+      box-sizing: border-box;
+    }
+    .kicker {
+      font-family: var(--font-mono);
+      font-size: 26px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 34px;
+    }
+    .headline {
+      font-family: var(--font-display);
+      font-size: 118px;
+      line-height: 0.98;
+      font-weight: 600;
+      color: var(--fg);
+      margin: 0;
+      max-width: 900px;
+    }
+    .headline em {
+      color: var(--accent);
+      font-style: normal;
+    }
+    .body {
+      margin: 54px 0 0;
+      max-width: 780px;
+      font-size: 36px;
+      line-height: 1.34;
+      color: var(--fg-muted);
+    }
+    .proof {
+      margin-top: 72px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      max-width: 760px;
+    }
+    .metric {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: rgba(253, 251, 248, 0.72);
+      padding: 28px;
+    }
+    .metric strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 58px;
+      line-height: 1;
+      color: var(--fg);
+    }
+    .metric span {
+      display: block;
+      margin-top: 10px;
+      font-family: var(--font-mono);
+      font-size: 16px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+    }
+    .cta {
+      position: absolute;
+      left: 82px;
+      bottom: 132px;
+      padding: 24px 42px;
+      border-radius: var(--radius-pill);
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 30px;
+    }
+    .monogram {
+      position: absolute;
+      right: 82px;
+      bottom: 132px;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div
+    id="root"
+    data-composition-id="maria-template"
+    data-start="0"
+    data-duration="5"
+    data-width="1080"
+    data-height="1920"
+  >
+    <section class="clip scene" id="scene-hero" data-start="0" data-duration="5" data-track-index="0">
+      <div class="kicker">Meta Ads con criterio</div>
+      <h1 class="headline">Tu trafico no falla solo por <em>el anuncio</em>.</h1>
+      <p class="body">Miramos el sistema completo: mensaje, oferta, audiencia, contenido y conversion.</p>
+      <div class="proof">
+        <div class="metric"><strong>7%+</strong><span>CTR como ambicion</span></div>
+        <div class="metric"><strong>1</strong><span>decision por pantalla</span></div>
+      </div>
+      <div class="cta">Revisemos el sistema</div>
+      <div class="monogram">MB</div>
+    </section>
+  </div>
+
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      tl.from('.kicker', { y: 32, opacity: 0, duration: 0.42, ease: 'power3.out' }, 0.15)
+        .from('.headline', { y: 44, opacity: 0, duration: 0.62, ease: 'power3.out' }, 0.35)
+        .from('.body', { y: 30, opacity: 0, duration: 0.48, ease: 'power2.out' }, 0.85)
+        .from('.metric', { y: 24, opacity: 0, duration: 0.42, stagger: 0.08, ease: 'power2.out' }, 1.18)
+        .from('.cta', { scale: 0.94, opacity: 0, duration: 0.38, ease: 'power2.out' }, 1.58)
+        .from('.monogram', { opacity: 0, rotate: -8, duration: 0.42, ease: 'sine.out' }, 1.7)
+        .to({}, { duration: 5 }, 0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['maria-template'] = tl;
+    })();
+  </script>
+</body>
+</html>

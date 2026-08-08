@@ -1,0 +1,49 @@
+/* ============================================================
+   TYPE TOKENS — María Bejarano
+   Brand fonts: Iowan Old Style / Charter (display serif),
+   Avenir Next (body sans), IBM Plex Mono (kickers/labels/data).
+
+   SUBSTITUTION FLAG: Iowan Old Style, Charter and Avenir Next are
+   commercial/system fonts with no redistributable webfont files.
+   Nearest open Google Fonts matches are loaded below:
+     Iowan Old Style / Charter  →  Source Serif 4
+     Avenir Next                →  Work Sans
+   IBM Plex Mono is open-source and loaded as-is (exact match).
+   Ask María for licensed webfont files if pixel-exact matching to
+   Iowan Old Style / Avenir Next is required for print or app use.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+:root {
+  --font-display: 'Source Serif 4', 'Iowan Old Style', 'Charter', Georgia, serif;
+  --font-body: 'Work Sans', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+  /* Deck / marketing scale (matches the 1920×1080 brand manual canvas) */
+  --text-deck-h1: 118px;
+  --text-deck-h2: 74px;
+  --text-deck-h3: 42px;
+  --text-deck-lead: 34px;
+  --text-deck-body: 28px;
+  --text-deck-kicker: 18px;
+  --text-deck-label: 15px;
+
+  /* Standard UI scale — same voice, sized for product/web surfaces */
+  --text-xs: 13px;
+  --text-sm: 15px;
+  --text-base: 17px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --text-4xl: 56px;
+  --text-5xl: 72px;
+
+  --leading-tight: 1.0;
+  --leading-snug: 1.15;
+  --leading-normal: 1.42;
+  --leading-relaxed: 1.5;
+
+  --tracking-kicker: 0.08em;
+  --tracking-display: -0.02em;
+}

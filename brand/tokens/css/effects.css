@@ -1,0 +1,38 @@
+/* ============================================================
+   SPACING, RADIUS & EFFECT TOKENS — María Bejarano
+   ============================================================ */
+:root {
+  /* Spacing scale (derived from the approved deck's gaps/paddings) */
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 20px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 42px;
+  --space-8: 56px;
+  --space-9: 74px;
+  --space-10: 96px;
+
+  /* Radius — soft, editorial, never sharp */
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 26px;
+  --radius-xl: 34px;
+  --radius-pill: 999px;
+
+  /* Shadow — used sparingly: stage/card lift only, never on flat UI */
+  --shadow-card: 0 20px 48px rgba(36, 30, 27, 0.12);
+  --shadow-lift: 0 28px 70px rgba(36, 30, 27, 0.16);
+  --shadow-stage: 0 30px 80px rgba(0, 0, 0, 0.35);
+
+  /* Border */
+  --border-width: 1px;
+  --border-color: var(--color-border);
+
+  /* Motion — brand has no source examples of animation; keep it quiet
+     and functional. Short, calm eases only — never bounce/spring. */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --duration-fast: 120ms; /* @kind other */
+  --duration-base: 180ms; /* @kind other */
+}
