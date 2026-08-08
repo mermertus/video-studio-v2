@@ -40,7 +40,6 @@ video-production/video-projects/*/output/*.mov
 
 # Studio export hygiene
 incoming/
-.claude/
 video-production/.claude/
 video-production/node_modules/
 video-production/renders/
