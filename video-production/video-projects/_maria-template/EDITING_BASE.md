@@ -37,7 +37,6 @@ Estas reglas son obligatorias en cada Reel de talking-head. La referencia aproba
 ## Subtítulos
 
 - Transcribir literalmente lo que María dice. No resumir, pulir, completar ni reescribir frases.
-- Identificar y conservar el hook textual pronunciado antes de diseñar los captions. Todo vídeo debe abrir con ese hook y una enumeración nunca puede empezar directamente en el punto `1.`.
 - Corregir únicamente errores obvios de reconocimiento automático después de contrastarlos con el audio.
 - Mostrar todos los subtítulos en MAYÚSCULAS, conservando las tildes, la `Ñ`, la puntuación y la literalidad de la transcripción. La mayúscula es un tratamiento visual; no justifica modificar las palabras.
 - Usar como máximo dos líneas, con cortes de frase naturales y sincronización precisa con la voz.
@@ -59,9 +58,6 @@ Estas reglas son obligatorias en cada Reel de talking-head. La referencia aproba
   - `caption--on-light`: texto tinta `#241E1B`, sin contorno, sombra, resplandor ni banda sobre crema, blanco, azul claro u otro campo luminoso.
 - Está prohibido mantener texto blanco normal sobre un fondo claro y confiar en el contorno para hacerlo legible.
 - Si el fondo cambia mientras el subtítulo está visible, dividir el clip o cambiar el modo exactamente en la transición. El storyboard debe declarar `modo_subtitulo: sobre-media | sobre-claro` para cada beat.
-- Todo cambio de fondo, layout o fase es una frontera dura de caption, aunque su timestamp coincida exactamente con el final de una palabra. Ningún bloque puede atravesarla.
-- En enumeraciones, cada numeral (`1.`, `2.`, `3.`...) comienza un bloque nuevo. La última palabra del punto anterior permanece en su caption y fase; nunca se une al numeral siguiente.
-- Los numerales pueden aparecer además como marcadores editoriales grandes durante unos instantes, sin sustituir el numeral literal del subtítulo ni competir con otro estímulo protagonista.
 - No usar sombra gris, caja gris, resplandor gris ni banda oscura detrás de los subtítulos en ninguno de los dos modos.
 - El color destacado nunca puede cambiar, resumir o sustituir las palabras literales.
 
@@ -69,16 +65,6 @@ Estas reglas son obligatorias en cada Reel de talking-head. La referencia aproba
 
 - En cada idea importante usar un gráfico explicativo, b-roll real, imagen tipo stock pertinente, captura real o mockup creíble.
 - Priorizar visuales que expliquen: gráficos de datos, comparativas, diagramas, interfaces, procesos y objetos relacionados con la frase.
-- En el hook es obligatorio crear un sticker, ilustración o imagen simbólica contextual que acompañe al hook textual. Debe aparecer en los primeros segundos, ser entendible de un vistazo, entrar con transición breve y llevar SFX sutil.
-- Regla de capas V2: el sticker principal del hook va grande, llamativo y por delante de la imagen para parar el scroll. En el cuerpo, la mayoría de stickers relevantes deben ir grandes pero integrados detrás de la cabeza o del cuerpo mediante recorte/máscara, siempre que el plano lo permita, para dar profundidad sin mover ni tapar subtítulos.
-- Los stickers no son sellos pequeños de esquina. Cuando se usen, deben tener jerarquía de recurso editorial: ocupar una zona visual predominante, normalmente detrás de la silueta de María, encima de la cabeza o debajo del bloque de subtítulos, sin tapar cara, boca, manos ni información clave.
-- Un sticker real tiene silueta propia de ilustración, recorte u objeto gráfico. Una tarjeta, panel, gráfica o caja rectangular no cuenta como sticker aunque se etiquete así en el storyboard.
-- En hook, el sticker contextual debe sentirse protagonista: tamaño grande, lectura inmediata, relación clara con la frase, capa frontal clara, y entrada con `pop`, escala, rotación leve, `wiggle` corto o efecto equivalente. Puede moverse tipo GIF mediante un ciclo finito y determinista. Si solo cabe como icono mínimo, debe rediseñarse; no se omite.
-- Durante el resto de la edición, intercalar stickers e ilustraciones contextuales como un recurso visual más cuando ayuden a convertir una idea hablada en imagen: cerebro, factura, lupa, puerta, radar, algoritmo, cliente, fricción, intención, etc. Priorizar integración detrás de cabeza/cuerpo con máscara editorial limpia; usar capa frontal solo si no invade lectura, cara ni zonas seguras.
-- El sticker no repite el subtítulo ni lo sustituye. El subtítulo mantiene la frase literal; el sticker acompaña, demuestra o sintetiza el concepto.
-- Cada sticker debe tener una función editorial clara, capa definida (`delante`, `detrás de cabeza/cuerpo` o `mixta`), posición segura, entrada animada de `0,35–0,65 s`, SFX audible y salida limpia si el siguiente recurso lo necesita. La animación preferente es `pop` + pequeño `wiggle` o rebote controlado de sticker; no usar movimiento continuo que distraiga mientras María habla.
-- La cadencia de stickers es editorial, no matemática: usar uno en el hook y después intercalarlos en 1-3 momentos de énfasis cuando aporten comprensión o energía. Deben convivir con otros apoyos, no sustituir todos los paneles, capturas, b-roll o gráficos.
-- Toda petición visual explícita se convierte en requisito bloqueante del brief y del QA. Debe registrar timestamp, implementación y evidencia renderizada; escribirla en el storyboard sin mostrarla no cuenta como cumplimiento.
 - Los apoyos gráficos, tanto arriba como abajo o a pantalla completa, deben tener movimiento funcional: trazado, conteo, aparición por capas, paneo o zoom suave.
 - Usar la pantalla completa para ideas que necesiten protagonismo, densidad visual o un cambio de ritmo. Durante ese beat no debe verse a María, pero su voz y los subtítulos continúan.
 - Diseñar primero la zona de subtítulos del recurso completo y después distribuir el resto del contenido alrededor de ella; nunca superponer el subtítulo al terminar.
@@ -115,12 +101,6 @@ Estas reglas son obligatorias en cada Reel de talking-head. La referencia aproba
 - Revisar fotogramas con y sin gráfico: subtítulos bajo la barbilla y sobre el pecho, sin tapar cara, manos o información y fuera de los `360 px` inferiores reservados por la plataforma.
 - En plano completo y en cada apoyo situado arriba, confirmar que hay aire visible entre barbilla y subtítulo y que el bloque descansa visualmente sobre el pecho, no pegado al rostro.
 - Confirmar en el storyboard y en el render que cada apoyo gráfico tiene los tres elementos: formato `arriba`/`abajo`/`completo`/`pip-llamada` definido, transición visible y SFX audible.
-- Confirmar que el hook textual literal aparece antes de cualquier enumeración y que lleva un sticker/ilustración contextual real, visible y con silueta propia.
-- Confirmar que cada sticker/ilustración contextual usado durante el vídeo está vinculado a una frase literal, no repite el subtítulo y tiene concepto, capa (`delante`, `detrás de cabeza/cuerpo` o `mixta`), posición, transición, SFX y zona segura definidos.
-- Confirmar que ningún panel, tarjeta o gráfica se ha contabilizado como sticker.
-- Confirmar que cada numeral comienza un caption nuevo y que ninguna palabra de la fase anterior se arrastra al numeral siguiente.
-- En cada cambio de fondo, layout o fase, inspeccionar el fotograma anterior, el fotograma exacto del límite y el fotograma posterior; el caption debe estar dividido y usar el modo correcto en los tres.
-- Ejecutar `node ../../scripts/validate-editorial-structure.mjs .` y bloquear el render si falla.
 - Confirmar que la secuencia no repite un patrón mecánico arriba/abajo y que incluye cambios de formato motivados por el contenido.
 - En cada recurso completo, revisar que María queda oculta durante todo el beat y que el subtítulo permanece legible sin tapar ningún elemento esencial del grafismo.
 - En cada `pip-llamada`, revisar primer fotograma, punto medio y final: la ventana de María no deforma el rostro y ningún subtítulo pisa su caja.
@@ -142,3 +122,12 @@ Estas reglas son obligatorias en cada Reel de talking-head. La referencia aproba
 - Limitar la norma al patrón defectuoso y conservar las alternativas profesionales que ya funcionan.
 - Revisar el caso que provocó el cambio y al menos un ejemplo de cada formato afectado.
 - No propagar la regla si reduce variedad, ritmo o capacidad explicativa sin aportar una mejora visual verificable.
+# Gate estructural obligatorio
+
+Antes de renderizar:
+
+1. Completar `editorial-structure.json` con hook textual pronunciado, sticker real del hook, requisitos explícitos, enumeración y fases.
+2. Separar todo numeral en un caption nuevo.
+3. Cortar captions en cada cambio de fondo, layout, contraste o fase, incluida la igualdad exacta del timestamp.
+4. Ejecutar `node ../../scripts/validate-editorial-structure.mjs .`.
+5. Muestrear cada frontera en un frame antes, límite y un frame después.

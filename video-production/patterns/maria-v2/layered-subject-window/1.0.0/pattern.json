@@ -1,8 +1,0 @@
-{
-  "id": "layered-subject-window",
-  "version": "1.0.0",
-  "kind": "root-recipe",
-  "integration": "root-required",
-  "entry": "root-layer.fragment.html",
-  "immutable": true
-}

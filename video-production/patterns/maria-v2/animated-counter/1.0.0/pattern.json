@@ -1,8 +1,0 @@
-{
-  "id": "animated-counter",
-  "version": "1.0.0",
-  "kind": "component",
-  "integration": "inline",
-  "entry": "component.fragment.html",
-  "immutable": true
-}

@@ -38,18 +38,6 @@ npx hyperframes lint
 
 Fix all errors before presenting the result.
 
-## Validación editorial obligatoria para María
-
-Todo Reel de María debe completar `editorial-structure.json` y pasar:
-
-```bash
-node scripts/validate-editorial-structure.mjs <project-folder>
-```
-
-El validador bloquea hooks ausentes, hook visual sin sticker real, requisitos
-explícitos sin evidencia, numerales unidos a la frase anterior, captions que
-atraviesan cambios de fondo/layout/fase y modos de contraste incorrectos.
-
 ## Key Rules
 
 1. Every timed element needs `data-start`, `data-duration`, and `data-track-index`
@@ -84,4 +72,17 @@ segura superior. No recrear ni editar la animación dentro de un proyecto de ví
 Full docs: https://hyperframes.heygen.com/introduction
 
 Machine-readable index for AI tools: https://hyperframes.heygen.com/llms.txt
+
+## Gate editorial de María
+
+Todo Reel debe completar `editorial-structure.json` y pasar:
+
+```bash
+node scripts/validate-editorial-structure.mjs <project-folder>
+```
+
+El agente bloquea el render cuando falta el hook textual antes de una
+enumeración, el sticker real del hook, una petición explícita, la separación de
+un numeral o el corte de caption en una frontera de fondo, layout, contraste o
+fase. Cada frontera se verifica un frame antes, en el límite y un frame después.
 

@@ -40,10 +40,12 @@ video-production/video-projects/*/output/*.mov
 
 # Studio export hygiene
 incoming/
-video-production/.claude/
 video-production/node_modules/
 video-production/renders/
 video-production/raw-media/
+video-production/.heygen-profile/
+video-production/.heygen-auth.json
+video-production/.playwright-profile/
 video-production/video-projects/*/assets/source/
 video-production/video-projects/*/renders/
 video-production/video-projects/*/snapshots/

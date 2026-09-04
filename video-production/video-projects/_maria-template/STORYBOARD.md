@@ -1,28 +1,18 @@
 # Storyboard - Maria Template
 
-Completar una fila por cada apoyo gráfico, sticker, ilustración contextual, captura, mockup o b-roll. No se aprueba ninguna entrada sin posición, transición, SFX y zona de subtítulos definidos.
-
-El hook visual siempre incluye al menos un sticker o ilustración real. Para stickers V2, completar además jerarquía, capa, zona y animación: el hook lleva sticker grande por delante; en el cuerpo, la mayoría de stickers relevantes deben integrarse detrás de cabeza/cuerpo mediante recorte/máscara cuando sea viable. Deben tener silueta propia, ser grandes y protagonistas. No se aceptan tarjetas/paneles renombrados como sticker ni stickers mínimos en esquina.
+Completar una fila por cada apoyo gráfico. No se aprueba ninguna entrada sin posición, transición, SFX y zona de subtítulos definidos.
 
 ## Mapa obligatorio de apoyos gráficos
 
-| Tiempo / frase literal | Visual de apoyo | Tipo (sticker/ilustración/captura/mockup/b-roll/gráfico) | Concepto representado | Capa si sticker (delante/detrás/mixta) | Formato (arriba/abajo/completo/pip-llamada) | María (reencuadrada/oculta/pip) | Cabeza completa / aire superior | Transición de entrada | SFX | Zona segura del subtítulo | Zona prohibida si pip | Salida / siguiente corte |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| | | | | | | | | | | | | |
+| Tiempo / frase literal | Visual de apoyo | Formato (arriba/abajo/completo/pip-llamada) | María (reencuadrada/oculta/pip) | Cabeza completa / aire superior | Transición de entrada | SFX | Zona segura del subtítulo | Zona prohibida si pip | Salida / siguiente corte |
+|---|---|---|---|---|---|---|---|---|---|
+| | | | | | | | | | |
 
 ## Scene 01 - Hook
 
 - Objetivo:
 - Frase literal:
-- Fin del hook / inicio de la primera enumeración:
 - Visual:
-- Tipo de recurso:
-- Concepto representado:
-- Sticker/ilustración contextual obligatorio:
-- Silueta propia / evidencia de que no es tarjeta o panel:
-- Si incluye sticker: tamaño/jerarquía protagonista:
-- Si incluye sticker: capa frontal en hook o detrás de cabeza/cuerpo en cuerpo:
-- Si incluye sticker: pop/wiggle/SFX:
 - Posición del apoyo:
 - Reencuadre:
 - Cabeza completa / margen sobre el pelo:
@@ -36,11 +26,6 @@ El hook visual siempre incluye al menos un sticker o ilustración real. Para sti
 - Objetivo:
 - Frase literal:
 - Visual:
-- Tipo de recurso:
-- Concepto representado:
-- Si incluye sticker: tamaño/jerarquía protagonista:
-- Si incluye sticker: capa frontal en hook o detrás de cabeza/cuerpo en cuerpo:
-- Si incluye sticker: pop/wiggle/SFX:
 - Posición del apoyo:
 - Reencuadre:
 - Cabeza completa / margen sobre el pelo:
@@ -54,11 +39,6 @@ El hook visual siempre incluye al menos un sticker o ilustración real. Para sti
 - Objetivo:
 - Frase literal:
 - Visual:
-- Tipo de recurso:
-- Concepto representado:
-- Si incluye sticker: tamaño/jerarquía protagonista:
-- Si incluye sticker: capa frontal en hook o detrás de cabeza/cuerpo en cuerpo:
-- Si incluye sticker: pop/wiggle/SFX:
 - Posición del apoyo:
 - Reencuadre:
 - Cabeza completa / margen sobre el pelo:
@@ -72,8 +52,6 @@ El hook visual siempre incluye al menos un sticker o ilustración real. Para sti
 - Objetivo:
 - Frase literal:
 - Visual:
-- Tipo de recurso:
-- Concepto representado:
 - Posición del apoyo:
 - Reencuadre:
 - Cabeza completa / margen sobre el pelo:
@@ -85,20 +63,6 @@ El hook visual siempre incluye al menos un sticker o ilustración real. Para sti
 ## Control del storyboard
 
 - [ ] Los apoyos combinan arriba, abajo, pantalla completa y `pip-llamada` con intención; no siguen un patrón automático arriba/abajo.
-- [ ] El hook textual literal aparece antes de cualquier enumeración.
-- [ ] El hook contiene un sticker/ilustración contextual real, visible y con silueta propia.
-- [ ] Los stickers/ilustraciones contextuales usados durante el vídeo están vinculados a frases literales y explican un concepto, no decoran ni repiten el subtítulo.
-- [ ] Todo sticker usado tiene presencia protagonista: tamaño visible, lectura inmediata y capa definida.
-- [ ] El sticker del hook va por delante de la imagen con impacto frontal, animación y SFX.
-- [ ] La mayoría de stickers del cuerpo, si los hay, se integran detrás de cabeza/cuerpo con recorte/máscara cuando el plano lo permite.
-- [ ] Ningún sticker queda como mini-icono perdido en una esquina.
-- [ ] Cada sticker entra con `pop`, escala, rotación leve, `wiggle` corto o efecto equivalente, más SFX sincronizado.
-- [ ] Ninguna tarjeta, panel o gráfica se contabiliza como sticker.
-- [ ] Cada numeral de una lista comienza un caption nuevo y no comparte bloque con la última palabra del punto anterior.
-- [ ] Cada cambio de fondo, layout o fase corta el caption exactamente en el límite.
-- [ ] Cada transición de riesgo se revisa un fotograma antes, en el límite y un fotograma después.
-- [ ] Cada petición visual explícita tiene timestamp y evidencia renderizada.
-- [ ] `editorial-structure.json` está completo y el validador automático pasa.
 - [ ] Cada entrada tiene transición visible.
 - [ ] Cada entrada tiene SFX audible.
 - [ ] Todos los subtítulos están en MAYÚSCULAS, conservan tildes y signos y no bajan de `52 px`.
@@ -116,3 +80,12 @@ El hook visual siempre incluye al menos un sticker o ilustración real. Para sti
 - [ ] Cada regla nueva identifica el defecto concreto que corrige y los recursos aprobados que conserva.
 - [ ] Ninguna regla nueva elimina efectos, formatos, transiciones o SFX aprobados sin autorización expresa.
 - [ ] La evaluación de no regresión confirma que la corrección mejora el resultado sin empobrecer ritmo, variedad o capacidad explicativa.
+# Checklist estructural
+
+- [ ] El hook textual aparece antes del primer numeral y reproduce literalmente el audio.
+- [ ] El hook tiene un sticker real relacionado, animado y con SFX.
+- [ ] Cada numeral empieza un caption nuevo.
+- [ ] Los captions se cortan en todas las fronteras de fondo, layout, contraste y fase.
+- [ ] Las peticiones explícitas tienen evidencia.
+- [ ] Se revisan los frames anterior / límite / posterior de cada transición.
+- [ ] Pasa `node ../../scripts/validate-editorial-structure.mjs .`.

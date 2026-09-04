@@ -16,7 +16,7 @@ await ctx.addInitScript(() => {
 });
 const page = ctx.pages()[0] || await ctx.newPage();
 await page.goto('https://app.heygen.com/login', { waitUntil: 'domcontentloaded' }).catch(() => {});
-console.log('>> Ventana abierta. Logueate con Google (equipopopup@gmail.com). Detectando...');
+console.log('>> Ventana abierta. Logueate con Google. Detectando...');
 
 const probe = await ctx.newPage();
 let ok = false;

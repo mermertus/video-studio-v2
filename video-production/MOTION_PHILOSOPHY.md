@@ -15,8 +15,6 @@ Objetivo: producir videos de marketing que capten rapido, expliquen con criterio
 9. El texto debe leerse en movil.
 10. Ningun render se entrega sin preview, frame-check y QA visual.
 11. El ritmo espacial no sigue un péndulo automático: combinar apoyo arriba, apoyo abajo, recurso a pantalla completa y `pip-llamada` según la idea.
-12. Todo vídeo abre con un hook textual literal acompañado de un hook visual creado; el primer punto de una lista nunca sustituye al hook.
-13. Todo hook lleva al menos un sticker o ilustración real con silueta propia. Puede usar movimiento tipo GIF si es finito, determinista y funcional.
 
 ## 1. Energia
 
@@ -37,7 +35,6 @@ Maria no es una marca lenta, pero tampoco grita.
 - Light Sweep / Shimmer: muy puntual para destacar dato o palabra.
 - Split-screen panel reveal: para coexistencia de talking-head + grafico.
 - Full-screen visual reveal: para ocultar temporalmente a Maria y dar protagonismo total a un grafico, captura, b-roll o mockup, siempre con zona de subtitulos reservada.
-- V2 protagonist sticker: obligatorio en el hook y disponible para énfasis intercalados. En el hook va grande, por delante de la imagen y con impacto claro para parar el scroll. En el cuerpo, la mayoría de stickers relevantes se colocan detrás de cabeza/cuerpo con recorte o máscara cuando el plano lo permite. Entra con `pop`/escala, rotación leve o `wiggle` corto en `0,35–0,65 s`, SFX sincronizado, sin tapar cara ni texto. Una tarjeta o panel no cuenta como sticker.
 - PIP llamada / WhatsApp: para reducir a Maria desde plano principal hacia una ventana abajo a la derecha mientras el grafico toma protagonismo. Duracion `0,45–0,65 s`, sin bounce, con SFX `whoosh-tuck` sincronizado al momento en que la ventana encaja.
 
 ## 3. Transiciones a evitar por defecto
@@ -59,10 +56,6 @@ Maria no es una marca lenta, pero tampoco grita.
 ## 5. Checklist
 
 - [ ] Hook claro en los primeros 3 segundos.
-- [ ] El hook textual literal aparece antes de cualquier enumeración y está acompañado por un sticker/ilustración real grande, frontal y con SFX.
-- [ ] Los stickers del cuerpo, si aparecen, priorizan integración detrás de cabeza/cuerpo con recorte o máscara sin tocar subtítulos.
-- [ ] Cada numeral empieza un caption nuevo y no comparte bloque con la frase anterior.
-- [ ] Cada cambio de fondo, layout o fase se revisa un fotograma antes, en el límite y un fotograma después.
 - [ ] Una idea principal por escena.
 - [ ] Merlot usado como decision, no como decoracion.
 - [ ] Azul sostiene continuidad visual.
@@ -82,3 +75,10 @@ Maria no es una marca lenta, pero tampoco grita.
 - [ ] El cierre no contiene titulares sueltos que compitan con la CTA o la follow card.
 
 
+# Movimiento editorial en hooks y listas
+
+- El hook siempre combina texto y una acción visual creada: como mínimo, un sticker real.
+- El sticker puede oscilar, hacer pop, rotar o repetir un gesto corto tipo GIF; el movimiento será finito, determinista y con SFX sincronizado.
+- Los numerales pueden crecer o ocupar temporalmente un plano dominante, pero nunca se pegan al caption anterior.
+- Los cambios de fondo, layout, contraste o fase son fronteras duras de captions.
+- Toda transición crítica se verifica un frame antes, en el límite y un frame después.

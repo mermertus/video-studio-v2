@@ -13,7 +13,6 @@ Tono visual: claro, sofisticado, profesional y cercano. Nada de plantillas frias
 ## Conversion Lens
 
 - Si el video no captura en los primeros 3 segundos, se reescribe.
-- Todo Reel abre con un hook textual literal y un hook visual creado; una enumeración no puede empezar directamente en `1.` sin ese beat de apertura.
 - Si el concepto no ayuda a CTR, lectura o conversion, se simplifica.
 - Si una pieza promete resultado, debe sonar concreta.
 - Referencia de performance: pensar en CTR 7%+ como estandar de ambicion, no como claim garantizado.
@@ -74,9 +73,6 @@ Los Reels y shorts deben poder leerse en movil:
 - Rostro de Maria visible cuando el video depende de autoridad/presencia.
 - No tapar la cara con titulares.
 - Combinar cuatro formatos de apoyo: mitad superior, mitad inferior, pantalla completa y `pip-llamada`. Evitar el patrón mecánico arriba/abajo/arriba/abajo.
-- Stickers V2: son obligatorios al menos en el hook visual de todos los vídeos. Deben ser ilustraciones, recortes u objetos con silueta propia, no tarjetas o paneles renombrados; tamaño protagonista, capa segura, `pop`/escala, rotación leve o `wiggle` corto y SFX sincronizado. El hook usa sticker grande por delante; durante el cuerpo, la mayoría de stickers relevantes se integran detrás de cabeza/cuerpo con recorte o máscara cuando el plano lo permite. Admiten movimiento tipo GIF finito y determinista.
-- En listas, cada numeral abre un caption nuevo y puede reforzarse como marcador editorial grande y breve. Nunca arrastra la última palabra de la fase anterior.
-- Todo cambio de fondo, layout o fase divide el caption exactamente en el límite y obliga a comprobar el fotograma anterior, el límite y el posterior.
 - En los apoyos a pantalla completa, Maria se oculta temporalmente y el diseño reserva una zona de subtitulos que no pisa titulares, datos, diagramas ni capturas.
 - `pip-llamada` se usa solo cuando un grafismo necesita protagonismo pero conviene mantener presencia humana: Maria se reduce desde el plano principal a una ventana tipo llamada/WhatsApp abajo a la derecha, con bordes redondeados, borde azul claro y sombra suave.
 - Durante `pip-llamada`, los subtitulos nunca pueden ir encima de la ventana ni tocar su caja. Reservar la esquina inferior derecha y recolocar el texto a una franja central segura o dividir la frase.
@@ -99,3 +95,11 @@ Los Reels y shorts deben poder leerse en movil:
 - En el cierre, una sola pieza manda: CTA o follow card, sin titulares sueltos arriba.
 
 
+# Hook visual y sticker obligatorio
+
+Todo vídeo de María incorpora al menos un sticker real en el hook visual. Debe
+ser una ilustración, objeto o recorte de silueta independiente, relacionado con
+el contenido. Una tarjeta, panel, chart o bloque de texto no es un sticker. Puede
+tener una animación breve tipo GIF, siempre determinista, y un SFX sincronizado.
+El hook textual precede a cualquier enumeración y conserva literalmente la frase
+pronunciada.

@@ -54,19 +54,8 @@ HyperFrames aporta técnica, ritmo y estructura. La marca decide color, tono, je
   - `caption--on-light`: tinta `#241E1B`; sin contorno, sombra, resplandor ni banda cuando el fondo sea crema, blanco, azul claro u otro campo luminoso.
 - Está prohibido usar texto blanco normal sobre fondo claro y confiar en el contorno para recuperar legibilidad. El `mark` destacado no cambia entre modos: azul profundo `#4A7691` o Merlot `#5C1A2C`, siempre con texto blanco.
 - Si una transición cambia el tipo de fondo durante un subtítulo, dividir el clip o cambiar de modo en ese límite; no dejar un único tratamiento atravesando fondos incompatibles.
-- Todo cambio de fondo, layout o fase fuerza un corte de caption, incluso si el timestamp coincide exactamente con el final de una palabra. Validar el fotograma anterior, el límite y el posterior.
-- En una enumeración, cada numeral empieza un caption nuevo. Está prohibido unir la última palabra del punto anterior con `1.`, `2.`, `3.` o cualquier numeral siguiente. Los numerales pueden aparecer además como marcadores editoriales grandes y breves.
 - No mostrar `MARÍA BEJARANO` como rótulo persistente, pie de gráfico o marca de agua.
 - B-roll, capturas, imágenes tipo stock y mockups deben explicar o reforzar la idea.
-- Hook obligatorio: todo vídeo empieza con un hook textual identificable y literal, acompañado por un hook visual creado. El punto `1.` de una enumeración nunca funciona como sustituto del hook.
-- Sticker obligatorio de hook: todo Reel incluye como mínimo un sticker o ilustración contextual real en los primeros segundos. Debe resumir visualmente la tensión, promesa o contradicción inicial, ir grande y por delante de la imagen, entrar pronto con transición y SFX, y no tapar cara ni subtítulo de forma que perjudique la lectura.
-- Jerarquía y capas de sticker V2: un sticker aprobado no es un icono pequeño perdido en esquina. Debe ocupar una zona predominante y leerse como recurso editorial. En el hook se prioriza capa frontal; en el cuerpo se prioriza integración detrás de cabeza/cuerpo mediante recorte o máscara, sin tapar cara, boca, manos ni información clave.
-- Definición verificable: un sticker tiene silueta propia de ilustración, recorte u objeto gráfico. Un panel, tarjeta, gráfica o caja rectangular no cuenta como sticker aunque el código o storyboard lo denominen así.
-- Movimiento de sticker V2: entrada `0,35–0,65 s` con `pop`, escala, rotación leve, `wiggle` corto o equivalente; SFX sincronizado; salida limpia antes del siguiente recurso si hay riesgo de solape. Puede moverse como un GIF mediante un ciclo finito y determinista.
-- Stickers e ilustraciones contextuales son un formato de apoyo aprobado junto a capturas, mockups, b-roll, gráficos y pantallas. Representan conceptos hablados de forma literal o metafórica clara; no sustituyen al subtítulo ni repiten sus palabras. En desarrollo, la mayoría deben quedar detrás de la silueta si el plano permite un recorte limpio.
-- Cadencia: valorar sticker protagonista en el hook y después intercalar 1-3 stickers en énfasis reales del desarrollo cuando aporten comprensión, retención o energía. No reemplazan todos los paneles/capturas/b-roll.
-- Todo sticker o ilustración debe quedar inventariado por beat: frase literal, concepto representado, archivo/fuente si existe, capa, posición, transición, SFX, zona segura de subtítulo y salida. Si no aporta comprensión, retención o énfasis editorial, no se usa.
-- Una petición explícita de recursos, como “poner stickers”, se convierte en requisito bloqueante del brief y del QA y necesita evidencia en el render.
 - Usar anotaciones, líneas y zooms con intención. La transición y el SFX no son opcionales cuando entra un apoyo gráfico.
 - Ningún texto interno puede pisar datos, anillos, barras, iconos u otras etiquetas.
 
@@ -96,13 +85,6 @@ HyperFrames aporta técnica, ritmo y estructura. La marca decide color, tono, je
 - Los subtítulos están en mayúsculas, no bajan de `52 px` y conservan tildes y signos.
 - Cada subtítulo queda bajo la barbilla y sobre el pecho, fuera de los `360 px` inferiores reservados para la interfaz de plataforma.
 - Todos los apoyos gráficos tienen formato definido (`arriba`, `abajo`, `completo` o `pip-llamada`), transición y SFX verificados.
-- El hook conserva el texto literal pronunciado y contiene un sticker/ilustración contextual real y visible.
-- Los stickers/ilustraciones usados dentro del vídeo están justificados por frase y tienen concepto, transición, SFX y zona segura documentados.
-- Todo sticker visible tiene tamaño protagonista y capa definida: frontal en hook, preferentemente detrás de cabeza/cuerpo en desarrollo, salvo motivo editorial explícito.
-- Ningún sticker queda reducido a mini-icono decorativo en esquina.
-- Ninguna tarjeta, panel o gráfica se contabiliza como sticker sin silueta propia.
-- Ningún numeral de una enumeración comparte caption con la última palabra del punto anterior.
-- Todo cambio de fondo, layout o fase corta el caption y pasa la revisión `fotograma anterior / límite / fotograma posterior`.
 - La secuencia mezcla formatos con intención y no produce un vaivén predecible arriba/abajo.
 - En cada recurso a pantalla completa, María queda oculta durante ese beat y el subtítulo ocupa una zona segura que no pisa el contenido del grafismo.
 - En cada `pip-llamada`, la ventana de María queda libre de subtítulos durante todo el beat y el SFX `whoosh-tuck` se oye sin tapar la voz.
@@ -130,3 +112,15 @@ HyperFrames aporta técnica, ritmo y estructura. La marca decide color, tono, je
 - Comprobar compatibilidad con pantalla completa, formatos divididos, `pip-llamada`, grafismos directos, paneles compactos, transiciones, SFX y CTA.
 - La nueva regla debe mejorar legibilidad, jerarquía, ritmo o seguridad visual sin reducir injustificadamente la variedad profesional.
 - Validar el caso corregido y una muestra de cada formato relacionado antes de propagarla a la plantilla.
+# Fronteras editoriales verificables
+
+Todo Reel de María declara su estructura en `editorial-structure.json` y pasa
+`node scripts/validate-editorial-structure.mjs <project-folder>`.
+
+- Hook textual obligatorio antes de la lista y hook visual obligatorio mediante sticker real.
+- Sticker real: ilustración, objeto o recorte con contorno propio. No se acepta como sticker una card, panel, gráfico, tabla o texto en caja.
+- La animación del sticker puede ser un bucle corto o movimiento tipo GIF, pero debe ser finita y determinista.
+- Los numerales siempre comienzan un caption nuevo.
+- Las fronteras de fondo, layout, modo de contraste y fase dividen captions incluso con igualdad exacta de timestamp.
+- Toda petición explícita del usuario requiere evidencia en el manifiesto y bloquea QA si falta.
+- Se muestrean las transiciones en `límite - 1 frame`, `límite` y `límite + 1 frame`.

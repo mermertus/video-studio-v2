@@ -1,8 +1,0 @@
-{
-  "id": "continuous-dashboard",
-  "version": "1.0.0",
-  "kind": "scene-blueprint",
-  "integration": "subcomposition",
-  "entry": "scene.html",
-  "immutable": true
-}
